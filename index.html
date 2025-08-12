@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="pt-BR" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>André Donizete Vieira - Contador</title>
+
+  <!-- Font Awesome para ícones -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+
+  <style>
+    /* Reset básico */
+    *{margin:0; padding:0; box-sizing:border-box;}
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background:#f0f4f8; color:#1e293b; line-height:1.6; min-height:100vh; padding-top:70px;
+    }
+    nav#mainMenu {
+      background:#1e40af; box-shadow:0 4px 8px rgb(30 64 175 / 0.4);
+      position:fixed; width:100%; top:0; left:0; z-index:1000; display:flex; justify-content:center;
+    }
+    nav#mainMenu ul {
+      list-style:none; display:flex; gap:28px; padding:12px 24px; max-width:960px; width:100%; align-items:center;
+    }
+    nav#mainMenu ul li {
+      cursor:pointer; transition:background-color 0.3s ease; border-radius:12px;
+    }
+    nav#mainMenu ul li:hover, nav#mainMenu ul li.active {
+      background:#2563eb; box-shadow:0 4px 10px rgb(37 99 235 / 0.6);
+    }
+    nav#mainMenu ul li a {
+      text-decoration:none; color:#fff; font-weight:600;
+      display:flex; align-items:center; gap:8px; font-size:1rem; padding:8px 12px;
+    }
+    nav#mainMenu ul li a i {
+      font-size:1.1rem;
+    }
+    main.container {
+      max-width:960px; margin:24px auto; padding:0 16px 48px;
+    }
+    section.content-section {
+      display:none; background:#fff; padding:24px 32px; border-radius:14px; box-shadow:0 8px 24px rgb(30 64 175 / 0.1);
+      animation:fadeIn 0.5s ease forwards; min-height:320px;
+    }
+    section.content-section.active {display:block;}
+    @keyframes fadeIn {
+      from {opacity:0; transform:translateY(12px);} to {opacity:1; transform:translateY(0);}
+    }
+    h1, h2 {
+      color:#1e40af; margin-bottom:20px;
+    }
+    .forum-container {
+      display:flex; flex-direction:column; gap:32px;
+    }
+    .upload-area {
+      border:2px dashed #2563eb; border-radius:16px; padding:24px; text-align:center;
+      color:#2563eb; font-weight:600; font-size:1.1rem; cursor:pointer; transition:background-color 0.3s ease;
+      user-select:none;
+    }
+    .upload-area:hover {
+      background:#dbeafe;
+    }
+    .dicas-list {
+      display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:24px;
+    }
+    .dica-card {
+      background:#f9fafb; border-radius:12px; box-shadow:0 6px 18px rgb(37 99 235 / 0.1);
+      padding:16px; display:flex; flex-direction:column; gap:10px; transition:box-shadow 0.3s ease;
+    }
+    .dica-card:hover {
+      box-shadow:0 6px 18px rgb(37 99 235 / 0.4);
+    }
+    .dica-title {
+      font-weight:700; color:#1e3a8a; font-size:1.1rem; display:flex; align-items:center; gap:8px;
+    }
+    .dica-desc {
+      font-size:0.95rem; color:#334155; flex-grow:1;
+    }
+    .dica-link {
+      color:#2563eb; text-decoration:none; font-weight:600; font-size:0.9rem;
+      align-self:flex-start; display:flex; align-items:center; gap:6px; transition:color 0.3s ease;
+    }
+    .dica-link:hover {
+      color:#1e40af; text-decoration:underline;
+    }
+    .dica-link i {
+      font-size:1rem;
+    }
+    ul.produtos-list {
+      list-style-type:disc; padding-left:20px; color:#334155; font-weight:500;
+    }
+    ul.produtos-list li {
+      margin-bottom:10px;
+    }
+    .alvaras-content p {
+      margin-bottom:12px; font-size:1rem; color:#334155;
+    }
+    .contato-info p {
+      font-size:1rem; margin-bottom:10px;
+    }
+    .contato-info a {
+      color:#2563eb; font-weight:600; text-decoration:none;
+    }
+    .contato-info a:hover {
+      text-decoration:underline;
+    }
+    .bio-section {
+      display:flex; flex-wrap:wrap; gap:24px; align-items:center;
+    }
+    .bio-section img {
+      width:160px; height:160px; border-radius:50%; object-fit:cover;
+      border:4px solid #1e40af; box-shadow:0 0 12px #2563ebaa;
+    }
+    .bio-text {
+      max-width:700px; font-size:1rem; color:#334155;
+    }
+    @media (max-width:720px) {
+      nav#mainMenu ul {
+        flex-wrap:wrap; justify-content:center; gap:16px;
+      }
+      .bio-section {
+        flex-direction:column; align-items:center; text-align:center;
+      }
+      .bio-text {
+        max-width:100%;
+      }
+      .forum-container {
+        gap:20px;
+      }
+      .dicas-list {
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="mainMenu" aria-label="Menu principal do site">
+    <ul>
+      <li class="active"><a href="#" data-section="forum"><i class="fa-solid fa-comments"></i> Fórum</a></li>
+      <li><a href="#" data-section="produtos"><i class="fa-solid fa-box-open"></i> Produtos e Serviços</a></li>
+      <li><a href="#" data-section="alvaras"><i class="fa-solid fa-file-contract"></i> Alvarás</a></li>
+      <li><a href="#" data-section="contato"><i class="fa-solid fa-envelope"></i> Contato</a></li>
+      <li><a href="#" data-section="biografia"><i class="fa-solid fa-id-badge"></i> Biografia</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+
+  <section id="forum" class="content-section active" tabindex="0" aria-label="Seção Fórum com dicas e arquivos">
+  <h1><i class="fa-solid fa-comments"></i> Fórum</h1>
+
+  <div class="forum-container">
+
+    <h2 style="color:#1e40af; margin-bottom:16px; border-left: 6px solid #2563eb; padding-left:12px;">
+      Dúvidas do SPED
+    </h2>
+
+    <div class="accordion">
+
+      <button class="accordion-item">COMO LANÇAR DIFERENCIAL DE ALÍQUOTA USO E CONSUMO SPED ICMS/RO</button>
+      <div class="accordion-content">
+        <p>Para lançar o diferencial de alíquota, você deve seguir a IN 33/2018 item 4...</p>
+        <p>As notas fiscais de entrada em que houver DA a pagar e o mesmo for pago diretamente na apuração do ICMS devem ser escrituradas da seguinte maneira:</p>
+	<p>C100 - Escriturar a nota fiscal normalmente (Fidelidade ao documento fiscal, sem o crédito do imposto).</p>
+	<p>C170 - Escriturar os itens normalmente conforme orientações do guia prático.</p>
+	<p>C190 - Escriturar normalmente conforme orientações do guia prático.</p>	
+	<p>C195 - Criar um registro C195 com uma observação do lançamento. (Ex: Diferencial de Alíquota de Uso e Consumo).</p>
+	<p>C197 - Criar somente um registro para cada documento fiscal, preenchendo da seguinte forma:</p>
+        <!-- Você pode colocar imagens, listas, etc aqui -->
+ 	<h2>COMO FICA NO SPED ICMS</H2>
+	<P>No Sped ICMS vá em Tabelas do Contribuinte e selecione a aba 0460 e clique no icone de mais</P>
+	<img src="imagens/REGISTRO 0460.PNG" alt="Exemplo de lançamento de diferencial de alíquota" style="max-width:100%; border-radius:12px; margin-top:12px;" />
+	<br><br>
+	<P>Vai abrir a tela 0460 pedindo para voce informa o codigo e a descrição</P>
+	<p>Codigo é de Controle Interno para manter o padrão use sempre o mesmo codigo para os proximos SPED</p>
+	<p>A descrição Voce pode Usar "Valor a Débito - Diferença de Alíquota - Uso e Consumo"</p>
+	<img src="imagens/REGISTRO 0460 em BRANCO.PNG" alt="Exemplo de lançamento de diferencial de alíquota" style="max-width:100%; border-radius:12px; margin-top:12px;" />
+      	<br><br>
+	<p>Exemplo de como fica preenchido"</p>
+	<img src="imagens/REGISTRO 0460 TEXTO.PNG" alt="Exemplo de lançamento de diferencial de alíquota" style="max-width:100%; border-radius:12px; margin-top:12px;" />
+	<br><br>
+	<p>Agora localize o Registro de Documentos Fiscais de Entradas e selecione e depois clique em NF"</p>
+	<p>nessa parte voce tem varias opções para localizar a sua NF-e</p>
+	<img src="imagens/REGISTRO C100.PNG" alt="Exemplo de lançamento de diferencial de alíquota" style="max-width:100%; border-radius:12px; margin-top:12px;" />
+	<P>Após localiza sua NF-e, selecione o registro C195 e clique no icone de mais</P>
+	<img src="imagens/REGISTRO C100 para c195.PNG" alt="Exemplo de lançamento de diferencial de alíquota" style="max-width:100%; border-radius:12px; margin-top:12px;" />
+	<br><br>
+	<P>Selecione o codigo cadastrado lá no Registro 0460,nesse exemplo é 400000</P>
+	<P>coloque a seguinte OBS: "Valor a Débito - Diferença de Alíquota - Uso e Consumo" e clique em salvar</P>
+	<img src="imagens/REGISTRO c1951.PNG" alt="Exemplo de lançamento de diferencial de alíquota" style="max-width:100%; border-radius:12px; margin-top:12px;" />
+	<br><br>
+	<p>Exemplo de como fica preenchido</p>
+	<img src="imagens/REGISTRO c19511.PNG" alt="Exemplo de lançamento de diferencial de alíquota" style="max-width:100%; border-radius:12px; margin-top:12px;" />
+	<br><br>
+	<p>Agora um pouco abaixo do Registro C195 vai ficar disponivel o icone de mais do Registro C197, clicar nele</p>
+	<img src="imagens/REGISTRO CAMINHO C197.PNG" alt="Exemplo de lançamento de diferencial de alíquota" style="max-width:100%; border-radius:12px; margin-top:12px;" />
+	<br><br>
+	<P>Nesse Registro a IN 33/2018 fala que as Seguintes Informações são Obrigatorias</P>
+	<p>Codigo de Ajuste: para Uso e consumo é "RO40000002"</p>
+	<p>Descrição Complementar é:  "DÉBITO DE DIFERENCIAL DE MATERIAL DE USO E CONSUMO"</p>
+	<p>Codido do Item não Precisar preencher</p>
+	<p>Aliquota de ICMS INTERESTADUAL</p>
+	<p>Base de calculo</p>
+	<p>Valor do ICMS</p>
+	<p>Outros Valores: "nesse Voce Informa %aliquota Interna do Produto</p>
+	<img src="imagens/REGISTRO branco C197.PNG" alt="Exemplo de lançamento de diferencial de alíquota" style="max-width:100%; border-radius:12px; margin-top:12px;" />
+	<br><br>
+	<p>Exemplo de como fica preenchido</p>
+	<img src="imagens/REGISTRO C197.PNG" alt="Exemplo de lançamento de diferencial de alíquota" style="max-width:100%; border-radius:12px; margin-top:12px;" />
+	<br><br>
+	<iframe width="560" height="315" 
+    src="https://www.youtube.com/embed/6oKBV7B0c5w?si=AmLSTaRboVyrs5rM"
+    title="YouTube video player" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+    allowfullscreen>
+</iframe>
+</div>
+
+      <button class="accordion-item">COMO PEGAR CRÉDITO DE ICMS FORNECEDOR SIMPLES NACIONAL</button>
+      <div class="accordion-content">
+        <p>O crédito de ICMS para fornecedores do Simples Nacional pode ser aproveitado quando a legislação permite...</p>
+      </div>
+
+      <!-- Adicione mais itens aqui -->
+      
+    </div>
+
+    <a href="arquivos/guia-sped-icms.pdf" target="_blank" rel="noopener" style="color:#2563eb; font-weight:600; text-decoration:none; font-size:1rem; margin-top:20px; display:inline-block;">
+      <i class="fa-solid fa-download"></i> Baixar PDF completo do SPED ICMS
+    </a>
+
+  </div>
+
+  <style>
+    .accordion-item {
+      background: #1e40af;
+      color: white;
+      cursor: pointer;
+      padding: 14px 20px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 1rem;
+      border-radius: 8px;
+      margin-top: 10px;
+      transition: background-color 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .accordion-item:hover,
+    .accordion-item.active {
+      background: #2563eb;
+      box-shadow: 0 4px 10px rgba(37, 99, 235, 0.6);
+    }
+    .accordion-content {
+      padding: 12px 20px;
+      background: #f9fafb;
+      border-radius: 0 0 8px 8px;
+      display: none;
+      color: #334155;
+      font-size: 0.95rem;
+      margin-bottom: 12px;
+    }
+    .accordion-content p {
+      margin: 0;
+    }
+  </style>
+
+  <script>
+    document.querySelectorAll('.accordion-item').forEach(button => {
+      button.addEventListener('click', () => {
+        const active = document.querySelector('.accordion-item.active');
+        if (active && active !== button) {
+          active.classList.remove('active');
+          active.nextElementSibling.style.display = 'none';
+        }
+
+        button.classList.toggle('active');
+        const content = button.nextElementSibling;
+        if (button.classList.contains('active')) {
+          content.style.display = 'block';
+        } else {
+          content.style.display = 'none';
+        }
+      });
+    });
+  </script>
+</section>
+
+
+
+    <section id="produtos" class="content-section" tabindex="0" aria-label="Seção Produtos e Serviços">
+      <h1><i class="fa-solid fa-box-open"></i> Produtos e Serviços</h1>
+      <ul class="produtos-list">
+        <li>Planilhas para cálculo de DIFAL e Substituição Tributária</li>
+        <li>Consultoria fiscal para empresas</li>
+        <li>Treinamentos em SPED e obrigações acessórias</li>
+      </ul>
+      <p>Entre em contato para solicitar orçamento personalizado.</p>
+    </section>
+
+    <section id="alvaras" class="content-section" tabindex="0" aria-label="Seção Alvarás">
+      <h1><i class="fa-solid fa-file-contract"></i> Alvarás</h1>
+      <p>Documentação necessária para solicitar alvarás fiscais:</p>
+      <ul>
+        <li>Formulários preenchidos corretamente</li>
+        <li>Comprovantes de inscrição estadual e municipal</li>
+        <li>Certidões negativas de débito</li>
+        <li>Outros documentos conforme a legislação vigente</li>
+      </ul>
+      <p>É importante manter os alvarás sempre atualizados para evitar problemas fiscais.</p>
+    </section>
+
+    <section id="contato" class="content-section" tabindex="0" aria-label="Seção Contato">
+      <h1><i class="fa-solid fa-envelope"></i> Contato</h1>
+      <p>Email: <a href="mailto:vieiraandre62@gmail.com">vieiraandre62@gmail.com</a></p>
+      <p>LinkedIn: <a href="#" target="_blank" rel="noopener noreferrer">Seu LinkedIn</a></p>
+      <p>Instagram: <a href="#" target="_blank" rel="noopener noreferrer">Seu Instagram</a></p>
+    </section>
+
+    <section id="biografia" class="content-section" tabindex="0" aria-label="Seção Biografia">
+      <h1><i class="fa-solid fa-id-badge"></i> Biografia</h1>
+      <div class="bio-section">
+        <img src="sua-foto.jpg" alt="Foto de André Donizete Vieira" />
+        <div class="bio-text">
+          <p>
+            André Donizete Vieira é formado em Ciências Contábeis pela Faculdade UNIP (2016–2019).<br />
+            Atua como Analista Fiscal na empresa Dydyo Refrigerantes.<br />
+            Produz planilhas na área fiscal para temas como DIFAL e Substituição Tributária.<br />
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    // Menu troca seções
+    const menuItems = document.querySelectorAll('nav#mainMenu ul li');
+    const sections = document.querySelectorAll('section.content-section');
+
+    menuItems.forEach(item => {
+      item.addEventListener('click', e => {
+        e.preventDefault();
+        menuItems.forEach(i => i.classList.remove('active'));
+        item.classList.add('active');
+
+        const sectionId = item.querySelector('a').dataset.section;
+        sections.forEach(s => s.classList.remove('active'));
+        document.getElementById(sectionId).classList.add('active');
+        document.getElementById(sectionId).focus();
+      });
+    });
+  </script>
+</body>
+</html>
