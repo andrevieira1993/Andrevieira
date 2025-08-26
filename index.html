@@ -180,6 +180,45 @@
     padding: 12px 16px;
   }
 }
+/* Botão hambúrguer */
+#menuToggle {
+  display: none;
+  background: #1e40af;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Ajustes mobile */
+@media (max-width:720px) {
+  #menuToggle {
+    display: block;
+    position: absolute;
+    top: 12px;
+    right: 20px;
+    z-index: 1001;
+  }
+
+  nav#mainMenu ul {
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    background: #1e40af;
+    position: absolute;
+    top: 55px;
+    left: 0;
+    padding: 12px 0;
+    border-radius: 0 0 12px 12px;
+  }
+
+  nav#mainMenu ul.show {
+    display: flex;
+  }
+}
 
   </style>
 </head>
@@ -192,6 +231,10 @@
       <li><a href="#" data-section="download"><i class="fa-solid fa-file-contract"></i> Download</a></li>
       <li><a href="#" data-section="contato"><i class="fa-solid fa-envelope"></i> Contato</a></li>
       <li><a href="#" data-section="biografia"><i class="fa-solid fa-id-badge"></i> Biografia</a></li>
+	<button id="menuToggle" aria-label="Abrir menu">
+  	<i class="fa-solid fa-bars"></i>
+	</button>
+
     </ul>
   </nav>
 
@@ -482,7 +525,7 @@
 
     <section id="contato" class="content-section" tabindex="0" aria-label="Seção Contato">
       <h1><i class="fa-solid fa-envelope"></i> Contato</h1>
-      <p>Celular: <a href="mailto:69 99262-1150">69 99262-1150</a></p>
+      <p>Celular: <a href="mailto:69 99262-115">69 99262-115</a></p>
       <p>Email: <a href="mailto:vieiraandre62@gmail.com">vieiraandre62@gmail.com</a></p>
       <p>LinkedIn: <a href="#" target="_blank" rel="noopener noreferrer">https://www.linkedin.com/in/andre-donizete-vieira-3bb79b140</a></p>
       <p>Instagram: <a href="#" target="_blank" rel="noopener noreferrer">Seu Instagram</a></p>
@@ -524,5 +567,13 @@ Além da atuação técnica, André também é criador de conteúdo digital, com
       });
     });
   </script>
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const menuUl = document.querySelector('nav#mainMenu ul');
+
+  menuToggle.addEventListener('click', () => {
+    menuUl.classList.toggle('show');
+  });
+</script>
 </body>
 </html>
