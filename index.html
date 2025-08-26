@@ -225,18 +225,19 @@
 <body>
 
   <nav id="mainMenu" aria-label="Menu principal do site">
-    <ul>
-      <li class="active"><a href="#" data-section="forum"><i class="fa-solid fa-comments"></i> Fórum</a></li>
-      <li><a href="#" data-section="produtos"><i class="fa-solid fa-box-open"></i> Produtos e Serviços</a></li>
-      <li><a href="#" data-section="download"><i class="fa-solid fa-file-contract"></i> Download</a></li>
-      <li><a href="#" data-section="contato"><i class="fa-solid fa-envelope"></i> Contato</a></li>
-      <li><a href="#" data-section="biografia"><i class="fa-solid fa-id-badge"></i> Biografia</a></li>
-	<button id="menuToggle" aria-label="Abrir menu">
-  	<i class="fa-solid fa-bars"></i>
-	</button>
+  <!-- Botão hambúrguer para mobile -->
+  <button id="menuToggle" aria-label="Abrir menu">
+    <i class="fa-solid fa-bars"></i>
+  </button>
 
-    </ul>
-  </nav>
+  <ul>
+    <li class="active"><a href="#" data-section="forum"><i class="fa-solid fa-comments"></i> Fórum</a></li>
+    <li><a href="#" data-section="produtos"><i class="fa-solid fa-box-open"></i> Produtos e Serviços</a></li>
+    <li><a href="#" data-section="download"><i class="fa-solid fa-file-contract"></i> Download</a></li>
+    <li><a href="#" data-section="contato"><i class="fa-solid fa-envelope"></i> Contato</a></li>
+    <li><a href="#" data-section="biografia"><i class="fa-solid fa-id-badge"></i> Biografia</a></li>
+  </ul>
+</nav>
 
   <main class="container">
 
@@ -525,7 +526,7 @@
 
     <section id="contato" class="content-section" tabindex="0" aria-label="Seção Contato">
       <h1><i class="fa-solid fa-envelope"></i> Contato</h1>
-      <p>Celular: <a href="mailto:69 99262-1150">69 99262-1150</a></p>
+      <p>Celular: <a href="mailto:69 992621150">69 992621150</a></p>
       <p>Email: <a href="mailto:vieiraandre62@gmail.com">vieiraandre62@gmail.com</a></p>
       <p>LinkedIn: <a href="#" target="_blank" rel="noopener noreferrer">https://www.linkedin.com/in/andre-donizete-vieira-3bb79b140</a></p>
       <p>Instagram: <a href="#" target="_blank" rel="noopener noreferrer">Seu Instagram</a></p>
@@ -564,13 +565,15 @@ Além da atuação técnica, André também é criador de conteúdo digital, com
         sections.forEach(s => s.classList.remove('active'));
         document.getElementById(sectionId).classList.add('active');
         document.getElementById(sectionId).focus();
+
+	const menuToggle = document.getElementById('menuToggle');
+ 	 const menuUl = document.querySelector('nav#mainMenu ul');
+
+  	menuToggle.addEventListener('click', () => {
+    menuUl.classList.toggle('show');
       });
     });
-const menuToggle = document.getElementById('menuToggle');
-  const menuUl = document.querySelector('nav#mainMenu ul');
 
-  menuToggle.addEventListener('click', () => {
-    menuUl.classList.toggle('show');
   });
   </script>
 
