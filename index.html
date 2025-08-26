@@ -342,12 +342,102 @@
 </style>
 
     <section id="download" class="content-section" tabindex="0" aria-label="Seção Download">
-      <h1><i class="fa-solid fa-file-contract"></i> Download</h1>
-	<h3>ARQUIVOS MODELOS EM PDF,WORD E EXCEL</h3>
-    <a href="REQ - MODELO REFAZ.docx" target="_blank" class="botao-download">
-      <i class="fa-solid fa-download"></i> Modelo de requerimento REFAZ
-      <p>Clique Aqui</p>
-    </section>
+  <h1><i class="fa-solid fa-file-contract"></i> Download</h1>
+  <h3>📂 Arquivos para Download</h3>
+
+  <div class="download-container">
+
+    <!-- Arquivo Word -->
+    <div class="download-item">
+      <h4><i class="fa-solid fa-file-word" style="color:#2b579a;"></i> Modelo de Requerimento REFAZ</h4>
+      <p>Arquivo em Word (.docx) pronto para edição.</p>
+      <a href="arquivos/REQ-MODELO-REFAZ.docx" download class="botao-download">
+        <i class="fa-solid fa-download"></i> Baixar Word
+      </a>
+    </div>
+
+    <!-- Arquivo PDF -->
+    <div class="download-item">
+      <h4><i class="fa-solid fa-file-pdf" style="color:#d32f2f;"></i> Guia Completo SPED ICMS</h4>
+      <p>Material em PDF explicando lançamentos e regras.</p>
+      <a href="arquivos/guia-sped-icms.pdf" download class="botao-download">
+        <i class="fa-solid fa-download"></i> Baixar PDF
+      </a>
+    </div>
+
+    <!-- Arquivo Excel -->
+    <div class="download-item">
+      <h4><i class="fa-solid fa-file-excel" style="color:#217346;"></i> Planilha Controle ICMS</h4>
+      <p>Planilha em Excel para organização e controle fiscal.</p>
+      <a href="arquivos/planilha-controle-icms.xlsx" download class="botao-download">
+        <i class="fa-solid fa-download"></i> Baixar Excel
+      </a>
+    </div>
+
+    <!-- 📑 Modelos de Contratos (Word) -->
+    <div class="download-item">
+      <h4><i class="fa-solid fa-file-signature" style="color:#2b579a;"></i> Modelos de Contratos</h4>
+      <p>Pacote com contratos prontos em Word (.docx).</p>
+      <a href="arquivos/modelos-contratos.docx" download class="botao-download">
+        <i class="fa-solid fa-download"></i> Baixar Contratos
+      </a>
+    </div>
+
+    <!-- 📊 Planilhas Extras (Excel) -->
+    <div class="download-item">
+      <h4><i class="fa-solid fa-table" style="color:#217346;"></i> Planilhas Extras</h4>
+      <p>Planilhas em Excel para diversos controles administrativos.</p>
+      <a href="arquivos/planilhas-extras.xlsx" download class="botao-download">
+        <i class="fa-solid fa-download"></i> Baixar Planilhas
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .download-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  .download-item {
+    background: #f9fafb;
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(37, 99, 235, 0.1);
+    text-align: center;
+  }
+
+  .download-item h4 {
+    color: #1e3a8a;
+    margin-bottom: 8px;
+  }
+
+  .download-item p {
+    font-size: 0.95rem;
+    color: #334155;
+    margin-bottom: 12px;
+  }
+
+  .botao-download {
+    display: inline-block;
+    background: #2563eb;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.3s ease;
+  }
+
+  .botao-download:hover {
+    background: #1e40af;
+  }
+</style>
+
     <section id="contato" class="content-section" tabindex="0" aria-label="Seção Contato">
       <h1><i class="fa-solid fa-envelope"></i> Contato</h1>
       <p>Celular: <a href="mailto:69 9 9262-1150">69 9 9262-1150</a></p>
