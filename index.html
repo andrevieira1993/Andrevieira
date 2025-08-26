@@ -1,19 +1,24 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" >
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>André Donizete Vieira - Contador</title>
   <meta name="description" content="Explicação completa da IN 33/2018 de Rondônia, incluindo lançamentos no SPED ICMS, diferencial de alíquota e exemplos práticos.">
-  <meta name="keywords" content="IN33/2018, IN 33/2018 Rondônia, instrução normativa 33 2018, diferencial de alíquota RO, SPED ICMS RO, substituição tributária Rondônia, André Donizete Vieira contador, André vieira, Unip, sefin, como lançar diferencial de aliquota sped icms de rondonia">
+  <meta name="keywords" content="IN33/2018, IN 33/2018 Rondônia, instrução normativa 33 2018, diferencial de alíquota RO, SPED ICMS RO, substituição tributária    Rondônia, André Donizete Vieira contador,André vieira,Unip,sefin, como lançar diferencial de aliquota sped icms de rondonia">
   <meta name="author" content="André Donizete Vieira">
 
+
+
   <!-- Font Awesome para ícones -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
 
   <style>
     /* Reset básico */
-    * { margin:0; padding:0; box-sizing:border-box; }
+    *{margin:0; padding:0; box-sizing:border-box;}
     body {
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       background:#f0f4f8; color:#1e293b; line-height:1.6; min-height:100vh; padding-top:70px;
@@ -28,50 +33,154 @@
     nav#mainMenu ul li {
       cursor:pointer; transition:background-color 0.3s ease; border-radius:12px;
     }
-    nav#mainMenu ul li:hover, nav#mainMenu ul li.active { background:#2563eb; box-shadow:0 4px 10px rgb(37 99 235 / 0.6); }
-    nav#mainMenu ul li a { text-decoration:none; color:#fff; font-weight:600; display:flex; align-items:center; gap:8px; font-size:1rem; padding:8px 12px; }
-    nav#mainMenu ul li a i { font-size:1.1rem; }
-
-    main.container { max-width:960px; margin:24px auto; padding:0 16px 48px; }
-
-    section.content-section { display:none; background:#fff; padding:24px 32px; border-radius:14px; box-shadow:0 8px 24px rgb(30 64 175 / 0.1); animation:fadeIn 0.5s ease forwards; min-height:320px; }
-    section.content-section.active { display:block; }
-    @keyframes fadeIn { from {opacity:0; transform:translateY(12px);} to {opacity:1; transform:translateY(0);} }
-
-    h1,h2 { color:#1e40af; margin-bottom:20px; }
-
-    /* Fórum */
-    .forum-container { display:flex; flex-direction:column; gap:32px; }
-    .accordion-item { background:#1e40af; color:white; cursor:pointer; padding:14px 20px; width:100%; border:none; text-align:left; outline:none; font-size:1rem; border-radius:8px; margin-top:10px; transition: background-color 0.3s ease; display:flex; align-items:center; gap:10px; }
-    .accordion-item:hover, .accordion-item.active { background:#2563eb; box-shadow:0 4px 10px rgba(37,99,235,0.6); }
-    .accordion-content { padding:12px 20px; background:#f9fafb; border-radius:0 0 8px 8px; display:none; color:#334155; font-size:0.95rem; margin-bottom:12px; }
-    .accordion-content p { margin:0; }
-
-    /* Produtos */
-    .produto-item { background:#f9fafb; padding:16px; border-radius:12px; box-shadow:0 6px 18px rgb(37 99 235 / 0.1); margin-bottom:20px; }
-    .produto-item h2, .produto-item h3 { color:#1e3a8a; }
-    .botao-comprar, .botao-download { display:inline-block; background:#2563eb; color:white; padding:10px 16px; border-radius:8px; text-decoration:none; margin-top:10px; font-weight:600; transition:background 0.3s ease; }
-    .botao-comprar:hover, .botao-download:hover { background:#1e40af; }
-
-    /* Download */
-    .download-container { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:20px; margin-top:20px; }
-    .download-item { background:#f9fafb; padding:16px; border-radius:12px; box-shadow:0 6px 18px rgba(37,99,235,0.1); text-align:center; }
-    .download-item h4 { color:#1e3a8a; margin-bottom:8px; }
-    .download-item p { font-size:0.95rem; color:#334155; margin-bottom:12px; }
-
-    /* Biografia */
-    .bio-section { display:flex; flex-wrap:wrap; gap:24px; align-items:center; }
-    .bio-section img { width:160px; height:160px; border-radius:50%; object-fit:cover; border:4px solid #1e40af; box-shadow:0 0 12px #2563ebaa; }
-    .bio-text { max-width:700px; font-size:1rem; color:#334155; }
-
-    /* Responsividade celular */
-    @media (max-width:720px) {
-      nav#mainMenu ul { flex-wrap:wrap; justify-content:center; gap:16px; }
-      .bio-section { flex-direction:column; align-items:center; text-align:center; }
-      .bio-text { max-width:100%; }
-      .forum-container { gap:20px; }
-      .dicas-list { grid-template-columns:1fr; }
+    nav#mainMenu ul li:hover, nav#mainMenu ul li.active {
+      background:#2563eb; box-shadow:0 4px 10px rgb(37 99 235 / 0.6);
     }
+    nav#mainMenu ul li a {
+      text-decoration:none; color:#fff; font-weight:600;
+      display:flex; align-items:center; gap:8px; font-size:1rem; padding:8px 12px;
+    }
+    nav#mainMenu ul li a i {
+      font-size:1.1rem;
+    }
+    main.container {
+      max-width:960px; margin:24px auto; padding:0 16px 48px;
+    }
+    section.content-section {
+      display:none; background:#fff; padding:24px 32px; border-radius:14px; box-shadow:0 8px 24px rgb(30 64 175 / 0.1);
+      animation:fadeIn 0.5s ease forwards; min-height:320px;
+    }
+    section.content-section.active {display:block;}
+    @keyframes fadeIn {
+      from {opacity:0; transform:translateY(12px);} to {opacity:1; transform:translateY(0);}
+    }
+    h1, h2 {
+      color:#1e40af; margin-bottom:20px;
+    }
+    .forum-container {
+      display:flex; flex-direction:column; gap:32px;
+    }
+    .upload-area {
+      border:2px dashed #2563eb; border-radius:16px; padding:24px; text-align:center;
+      color:#2563eb; font-weight:600; font-size:1.1rem; cursor:pointer; transition:background-color 0.3s ease;
+      user-select:none;
+    }
+    .upload-area:hover {
+      background:#dbeafe;
+    }
+    .dicas-list {
+      display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:24px;
+    }
+    .dica-card {
+      background:#f9fafb; border-radius:12px; box-shadow:0 6px 18px rgb(37 99 235 / 0.1);
+      padding:16px; display:flex; flex-direction:column; gap:10px; transition:box-shadow 0.3s ease;
+    }
+    .dica-card:hover {
+      box-shadow:0 6px 18px rgb(37 99 235 / 0.4);
+    }
+    .dica-title {
+      font-weight:700; color:#1e3a8a; font-size:1.1rem; display:flex; align-items:center; gap:8px;
+    }
+    .dica-desc {
+      font-size:0.95rem; color:#334155; flex-grow:1;
+    }
+    .dica-link {
+      color:#2563eb; text-decoration:none; font-weight:600; font-size:0.9rem;
+      align-self:flex-start; display:flex; align-items:center; gap:6px; transition:color 0.3s ease;
+    }
+    .dica-link:hover {
+      color:#1e40af; text-decoration:underline;
+    }
+    .dica-link i {
+      font-size:1rem;
+    }
+    ul.produtos-list {
+      list-style-type:disc; padding-left:20px; color:#334155; font-weight:500;
+    }
+    ul.produtos-list li {
+      margin-bottom:10px;
+    }
+    .Download-content p {
+      margin-bottom:12px; font-size:1rem; color:#334155;
+    }
+    .contato-info p {
+      font-size:1rem; margin-bottom:10px;
+    }
+    .contato-info a {
+      color:#2563eb; font-weight:600; text-decoration:none;
+    }
+    .contato-info a:hover {
+      text-decoration:underline;
+    }
+    .bio-section {
+      display:flex; flex-wrap:wrap; gap:24px; align-items:center;
+    }
+    .bio-section img {
+      width:160px; height:160px; border-radius:50%; object-fit:cover;
+      border:4px solid #1e40af; box-shadow:0 0 12px #2563ebaa;
+    }
+    .bio-text {
+      max-width:700px; font-size:1rem; color:#334155;
+    }
+    @media (max-width:720px) {
+      nav#mainMenu ul {
+        flex-wrap:wrap; justify-content:center; gap:16px;
+      }
+      .bio-section {
+        flex-direction:column; align-items:center; text-align:center;
+      }
+      .bio-text {
+        max-width:100%;
+      }
+      .forum-container {
+        gap:20px;
+      }
+      .dicas-list {
+        grid-template-columns:1fr;
+      }
+    }
+/* Ajustes para mobile */
+@media (max-width:720px) {
+  nav#mainMenu ul {
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px;
+  }
+
+  nav#mainMenu ul li a {
+    font-size: 0.95rem;
+    padding: 10px 8px;
+  }
+
+  .bio-section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .bio-text {
+    max-width: 100%;
+    font-size: 0.95rem;
+  }
+
+  .forum-container {
+    gap: 20px;
+  }
+
+  .dicas-list, .download-container {
+    grid-template-columns: 1fr;
+  }
+
+  .produto-item, .download-item {
+    padding: 14px;
+  }
+
+  .accordion-item {
+    font-size: 0.95rem;
+    padding: 12px 16px;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -87,121 +196,298 @@
   </nav>
 
   <main class="container">
-    <!-- Fórum -->
-    <section id="forum" class="content-section active" tabindex="0" aria-label="Seção Fórum com dicas e arquivos">
-      <h1><i class="fa-solid fa-comments"></i> Fórum</h1>
-      <div class="forum-container">
-        <h2 style="color:#1e40af; margin-bottom:16px; border-left:6px solid #2563eb; padding-left:12px;">DICAS</h2>
-        <div class="accordion">
-          <a href="in-33-2018.html" class="accordion-item" style="text-decoration:none;">COMO LANÇAR DIFERENCIAL DE ALÍQUOTA USO E CONSUMO SPED ICMS/RO</a>
-          <button class="accordion-item">COMO PEGAR CRÉDITO DE ICMS FORNECEDOR SIMPLES NACIONAL</button>
-          <div class="accordion-content"><p>Em Desenvolvimento</p></div>
-          <button class="accordion-item">COMO SOLICITAR INTERNAMENTO DE NF-E</button>
-          <div class="accordion-content"><p>Em Desenvolvimento</p></div>
-          <button class="accordion-item">ERRO CNPJ DIFERENTE CHAVE DE ACESSO</button>
-          <div class="accordion-content"><p>Em Desenvolvimento</p></div>
-          <button class="accordion-item">CONSULTA SINTEGRA</button>
-          <div class="accordion-content"><p>Em Desenvolvimento</p></div>
-        </div>
-        <a href="arquivos/guia-sped-icms.pdf" target="_blank" rel="noopener" style="color:#2563eb; font-weight:600; text-decoration:none; font-size:1rem; margin-top:20px; display:inline-block;"><i class="fa-solid fa-download"></i> Baixar PDF completo do SPED ICMS</a>
-      </div>
-      <script>
-        document.querySelectorAll('.accordion-item').forEach(button => {
-          button.addEventListener('click', () => {
-            const active = document.querySelector('.accordion-item.active');
-            if (active && active !== button) {
-              active.classList.remove('active');
-              active.nextElementSibling.style.display = 'none';
-            }
-            button.classList.toggle('active');
-            const content = button.nextElementSibling;
-            if(button.classList.contains('active')) { content.style.display='block'; } else { content.style.display='none'; }
-          });
-        });
-      </script>
-    </section>
 
-    <!-- Produtos e Serviços -->
+  <section id="forum" class="content-section active" tabindex="0" aria-label="Seção Fórum com dicas e arquivos">
+  <h1><i class="fa-solid fa-comments"></i> Fórum</h1>
+
+  <div class="forum-container">
+
+    <h2 style="color:#1e40af; margin-bottom:16px; border-left: 6px solid #2563eb; padding-left:12px;">
+      DICAS
+    </h2>
+
+    <div class="accordion">
+
+      <a href="in-33-2018.html" class="accordion-item" style="text-decoration: none;">
+  COMO LANÇAR DIFERENCIAL DE ALÍQUOTA USO E CONSUMO SPED ICMS/RO
+</a>
+        
+      <button class="accordion-item">COMO PEGAR CRÉDITO DE ICMS FORNECEDOR SIMPLES NACIONAL</button>
+      <div class="accordion-content">
+        <p>Em Desenvolvimento</p>
+      </div>
+
+      <!-- Adicione mais itens aqui -->
+      
+   	
+	<button class="accordion-item">COMO SOLICITAR INTERNAMENTO DE NF-E</button>
+      	<div class="accordion-content">
+        <p>Em Desenvolvimento</p>
+      </div>
+
+      <!-- Adicione mais itens aqui -->
+
+      <button class="accordion-item">ERRO CNPJ DIFERENTE CHAVE DE ACESSO</button>
+      	<div class="accordion-content">
+        <p>Em Desenvolvimento</p>
+      </div>
+
+	<button class="accordion-item">CONSULTA SINTEGRA</button>
+      	<div class="accordion-content">
+        <p>Em Desenvolvimento</p>
+      </div>
+
+      <!-- Adicione mais itens aqui -->
+    </div>
+    <a href="arquivos/guia-sped-icms.pdf" target="_blank" rel="noopener" style="color:#2563eb; font-weight:600; text-decoration:none; font-size:1rem; margin-top:20px; display:inline-block;">
+      <i class="fa-solid fa-download"></i> Baixar PDF completo do SPED ICMS
+    </a>
+
+  </div>
+
+  <style>
+    .accordion-item {
+      background: #1e40af;
+      color: white;
+      cursor: pointer;
+      padding: 14px 20px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 1rem;
+      border-radius: 8px;
+      margin-top: 10px;
+      transition: background-color 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .accordion-item:hover,
+    .accordion-item.active {
+      background: #2563eb;
+      box-shadow: 0 4px 10px rgba(37, 99, 235, 0.6);
+    }
+    .accordion-content {
+      padding: 12px 20px;
+      background: #f9fafb;
+      border-radius: 0 0 8px 8px;
+      display: none;
+      color: #334155;
+      font-size: 0.95rem;
+      margin-bottom: 12px;
+    }
+    .accordion-content p {
+      margin: 0;
+    }
+  </style>
+
+  <script>
+    document.querySelectorAll('.accordion-item').forEach(button => {
+      button.addEventListener('click', () => {
+        const active = document.querySelector('.accordion-item.active');
+        if (active && active !== button) {
+          active.classList.remove('active');
+          active.nextElementSibling.style.display = 'none';
+        }
+
+        button.classList.toggle('active');
+        const content = button.nextElementSibling;
+        if (button.classList.contains('active')) {
+          content.style.display = 'block';
+        } else {
+          content.style.display = 'none';
+        }
+      });
+    });
+  </script>
+</section>
+
+
+
     <section id="produtos" class="content-section" tabindex="0" aria-label="Seção Produtos e Serviços">
-      <h1><i class="fa-solid fa-box-open"></i> Produtos e Serviços</h1>
-      <div class="produto-item">
-        <h2>Planilha DIFAL e Substituição Tributária</h2>
-        <p>Automatize seus cálculos de DIFAL e Substituição Tributária de forma prática e segura.</p>
-        <a href="https://go.hotmart.com/V98773824O?dp=1" target="_blank" class="botao-comprar"><i class="fa-solid fa-cart-shopping"></i> Comprar agora</a>
-      </div>
-      <div class="produto-item">
-        <h2>Planilha Controle de Parcelamentos</h2>
-        <p>Gerencie parcelas pagas, vencidas e a vencer com relatórios automáticos.</p>
-        <a href="https://go.hotmart.com/V98773824O?dp=1" target="_blank" class="botao-comprar"><i class="fa-solid fa-cart-shopping"></i> Comprar agora</a>
-      </div>
-      <hr style="margin:30px 0; border:none; height:2px; background:#2563eb;">
-      <h2 style="color:#1e40af; margin-bottom:12px;"><i class="fa-solid fa-file-pdf"></i> PDFs Gratuitos</h2>
-      <div class="produto-item">
-        <h3>Guia Completo SPED ICMS</h3>
-        <p>Material explicativo com passo a passo para escrituração e ajustes no SPED ICMS.</p>
-        <a href="arquivos/guia-sped-icms.pdf" target="_blank" class="botao-download"><i class="fa-solid fa-download"></i> Baixar PDF</a>
-      </div>
-      <div class="produto-item">
-        <h3>Manual DIFAL</h3>
-        <p>Guia rápido com cálculos e regras do Diferencial de Alíquota.</p>
-        <a href="arquivos/manual-difal.pdf" target="_blank" class="botao-download"><i class="fa-solid fa-download"></i> Baixar PDF</a>
-      </div>
-      <h2 style="color:#1e40af; margin-top:20px; margin-bottom:12px;"><i class="fa-solid fa-file-excel"></i> Planilhas Gratuitas</h2>
-      <div class="produto-item">
-        <h3>Planilha Controle de ICMS</h3>
-        <p>Controle simples para lançamentos e acompanhamento do ICMS.</p>
-        <a href="arquivos/planilha-controle-icms.xlsx" target="_blank" class="botao-download"><i class="fa-solid fa-download"></i> Baixar Planilha</a>
-      </div>
-      <div class="produto-item">
-        <h3>Planilha Cálculo ST</h3>
-        <p>Automatiza o cálculo da Substituição Tributária com base e alíquota.</p>
-        <a href="arquivos/calculo-st.xlsx" target="_blank" class="botao-download"><i class="fa-solid fa-download"></i> Baixar Planilha</a>
-      </div>
-    </section>
+  <h1><i class="fa-solid fa-box-open"></i> Produtos e Serviços</h1>
 
-    <!-- Download -->
+  <!-- Produtos Pagos -->
+  <div class="produto-item">
+    <h2>Planilha DIFAL e Substituição Tributária</h2>
+    <p>Automatize seus cálculos de DIFAL e Substituição Tributária de forma prática e segura.</p>
+    <a href="https://go.hotmart.com/V98773824O?dp=1" target="_blank" class="botao-comprar">
+      <i class="fa-solid fa-cart-shopping"></i> Comprar agora
+    </a>
+  </div>
+
+  <div class="produto-item">
+    <h2>Planilha Controle de Parcelamentos</h2>
+    <p>Gerencie parcelas pagas, vencidas e a vencer com relatórios automáticos.</p>
+    <a href="https://go.hotmart.com/V98773824O?dp=1" target="_blank" class="botao-comprar">
+      <i class="fa-solid fa-cart-shopping"></i> Comprar agora
+    </a>
+  </div>
+
+  <hr style="margin:30px 0; border: none; height: 2px; background: #2563eb;">
+
+  <!-- PDFs Gratuitos -->
+  <h2 style="color:#1e40af; margin-bottom:12px;"><i class="fa-solid fa-file-pdf"></i> PDFs Gratuitos</h2>
+  <div class="produto-item">
+    <h3>Guia Completo SPED ICMS</h3>
+    <p>Material explicativo com passo a passo para escrituração e ajustes no SPED ICMS.</p>
+    <a href="arquivos/guia-sped-icms.pdf" target="_blank" class="botao-download">
+      <i class="fa-solid fa-download"></i> Baixar PDF
+    </a>
+  </div>
+
+  <div class="produto-item">
+    <h3>Manual DIFAL</h3>
+    <p>Guia rápido com cálculos e regras do Diferencial de Alíquota.</p>
+    <a href="arquivos/manual-difal.pdf" target="_blank" class="botao-download">
+      <i class="fa-solid fa-download"></i> Baixar PDF
+    </a>
+  </div>
+
+  <!-- Planilhas Gratuitas -->
+  <h2 style="color:#1e40af; margin-top:20px; margin-bottom:12px;"><i class="fa-solid fa-file-excel"></i> Planilhas Gratuitas</h2>
+  <div class="produto-item">
+    <h3>Planilha Controle de ICMS</h3>
+    <p>Controle simples para lançamentos e acompanhamento do ICMS.</p>
+    <a href="arquivos/planilha-controle-icms.xlsx" target="_blank" class="botao-download">
+      <i class="fa-solid fa-download"></i> Baixar Planilha
+    </a>
+  </div>
+
+  <div class="produto-item">
+    <h3>Planilha Cálculo ST</h3>
+    <p>Automatiza o cálculo da Substituição Tributária com base e alíquota.</p>
+    <a href="arquivos/calculo-st.xlsx" target="_blank" class="botao-download">
+      <i class="fa-solid fa-download"></i> Baixar Planilha
+    </a>
+  </div>
+</section>
+
+<style>
+  .produto-item {
+    background:#f9fafb; padding:16px; border-radius:12px; 
+    box-shadow:0 6px 18px rgb(37 99 235 / 0.1);
+    margin-bottom:20px;
+  }
+  .produto-item h2, .produto-item h3 {
+    color:#1e3a8a;
+  }
+  .botao-comprar, .botao-download {
+    display:inline-block; background:#2563eb; color:white;
+    padding:10px 16px; border-radius:8px; text-decoration:none; margin-top:10px;
+    font-weight:600; transition: background 0.3s ease;
+  }
+  .botao-comprar:hover, .botao-download:hover {
+    background:#1e40af;
+  }
+</style>
+
     <section id="download" class="content-section" tabindex="0" aria-label="Seção Download">
-      <h1><i class="fa-solid fa-file-contract"></i> Download</h1>
-      <h3>📂 Arquivos para Download</h3>
-      <div class="download-container">
-        <div class="download-item">
-          <h4><i class="fa-solid fa-file-word" style="color:#2b579a;"></i> Modelo de Requerimento REFAZ</h4>
-          <p>Arquivo em Word (.docx) pronto para edição.</p>
-          <a href="REQ - MODELO REFAZ.docx" download class="botao-download"><i class="fa-solid fa-download"></i> Baixar WORD</a>
-        </div>
-        <div class="download-item">
-          <h4><i class="fa-solid fa-file-pdf" style="color:#d32f2f;"></i> Guia Completo SPED ICMS</h4>
-          <p>Material em PDF explicando lançamentos e regras.</p>
-          <a href="arquivos/guia-sped-icms.pdf" download class="botao-download"><i class="fa-solid fa-download"></i> Baixar PDF</a>
-        </div>
-        <div class="download-item">
-          <h4><i class="fa-solid fa-file-excel" style="color:#217346;"></i> Planilha Controle ICMS</h4>
-          <p>Planilha em Excel para organização e controle fiscal.</p>
-          <a href="arquivos/planilha-controle-icms.xlsx" download class="botao-download"><i class="fa-solid fa-download"></i> Baixar Excel</a>
-        </div>
-        <div class="download-item">
-          <h4><i class="fa-solid fa-file-signature" style="color:#2b579a;"></i> Modelos de Contratos</h4>
-          <p>Pacote com contratos prontos em Word (.docx).</p>
-          <a href="arquivos/modelos-contratos.docx" download class="botao-download"><i class="fa-solid fa-download"></i> Baixar Contratos</a>
-        </div>
-        <div class="download-item">
-          <h4><i class="fa-solid fa-table" style="color:#217346;"></i> Planilhas Extras</h4>
-          <p>Planilhas em Excel para diversos controles administrativos.</p>
-          <a href="arquivos/planilhas-extras.xlsx" download class="botao-download"><i class="fa-solid fa-download"></i> Baixar Planilhas</a>
-        </div>
-      </div>
-    </section>
+  <h1><i class="fa-solid fa-file-contract"></i> Download</h1>
+  <h3>📂 Arquivos para Download</h3>
 
-    <!-- Contato -->
+  <div class="download-container">
+
+    <!-- Arquivo Word -->
+    <div class="download-item">
+      <h4><i class="fa-solid fa-file-word" style="color:#2b579a;"></i> Modelo de Requerimento REFAZ</h4>
+      <p>Arquivo em Word (.docx) pronto para edição.</p>
+      <a href="REQ - MODELO REFAZ.docx" download class="botao-download">
+      <i class="fa-solid fa-download"></i> Baixar WORD
+	</a>
+    </div>
+
+    <!-- Arquivo PDF -->
+    <div class="download-item">
+      <h4><i class="fa-solid fa-file-pdf" style="color:#d32f2f;"></i> Guia Completo SPED ICMS</h4>
+      <p>Material em PDF explicando lançamentos e regras.</p>
+      <a href="arquivos/guia-sped-icms.pdf" download class="botao-download">
+        <i class="fa-solid fa-download"></i> Baixar PDF
+      </a>
+    </div>
+
+    <!-- Arquivo Excel -->
+    <div class="download-item">
+      <h4><i class="fa-solid fa-file-excel" style="color:#217346;"></i> Planilha Controle ICMS</h4>
+      <p>Planilha em Excel para organização e controle fiscal.</p>
+      <a href="arquivos/planilha-controle-icms.xlsx" download class="botao-download">
+        <i class="fa-solid fa-download"></i> Baixar Excel
+      </a>
+    </div>
+
+    <!-- 📑 Modelos de Contratos (Word) -->
+    <div class="download-item">
+      <h4><i class="fa-solid fa-file-signature" style="color:#2b579a;"></i> Modelos de Contratos</h4>
+      <p>Pacote com contratos prontos em Word (.docx).</p>
+      <a href="arquivos/modelos-contratos.docx" download class="botao-download">
+        <i class="fa-solid fa-download"></i> Baixar Contratos
+      </a>
+    </div>
+
+    <!-- 📊 Planilhas Extras (Excel) -->
+    <div class="download-item">
+      <h4><i class="fa-solid fa-table" style="color:#217346;"></i> Planilhas Extras</h4>
+      <p>Planilhas em Excel para diversos controles administrativos.</p>
+      <a href="arquivos/planilhas-extras.xlsx" download class="botao-download">
+        <i class="fa-solid fa-download"></i> Baixar Planilhas
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .download-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  .download-item {
+    background: #f9fafb;
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(37, 99, 235, 0.1);
+    text-align: center;
+  }
+
+  .download-item h4 {
+    color: #1e3a8a;
+    margin-bottom: 8px;
+  }
+
+  .download-item p {
+    font-size: 0.95rem;
+    color: #334155;
+    margin-bottom: 12px;
+  }
+
+  .botao-download {
+    display: inline-block;
+    background: #2563eb;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.3s ease;
+  }
+
+  .botao-download:hover {
+    background: #1e40af;
+  }
+</style>
+
     <section id="contato" class="content-section" tabindex="0" aria-label="Seção Contato">
       <h1><i class="fa-solid fa-envelope"></i> Contato</h1>
-      <p>Celular: <a href="tel:+5569992621150">69 9 92621150</a></p>
+      <p>Celular: <a href="mailto:69 99262-1150">69 99262-1150</a></p>
       <p>Email: <a href="mailto:vieiraandre62@gmail.com">vieiraandre62@gmail.com</a></p>
       <p>LinkedIn: <a href="#" target="_blank" rel="noopener noreferrer">https://www.linkedin.com/in/andre-donizete-vieira-3bb79b140</a></p>
       <p>Instagram: <a href="#" target="_blank" rel="noopener noreferrer">Seu Instagram</a></p>
     </section>
 
-    <!-- Biografia -->
     <section id="biografia" class="content-section" tabindex="0" aria-label="Seção Biografia">
       <h1><i class="fa-solid fa-id-badge"></i> Biografia</h1>
       <div class="bio-section">
@@ -210,24 +496,27 @@
           <p>
             André Donizete Vieira é formado em Ciências Contábeis pela Universidade Paulista (UNIP), com graduação concluída entre 2016 e 2019. Atualmente, atua como Analista Fiscal na empresa Dydyo Refrigerantes, localizada em Porto Velho, Rondônia, onde também reside.
 
-            Com sólida experiência na área fiscal e tributária, André é responsável pela elaboração e análise de planilhas especializadas em temas como DIFAL (Diferencial de Alíquota) e Substituição Tributária, além de possuir amplo conhecimento no envio das obrigações acessórias SPED ICMS/IPI e SPED Contribuições. Também oferece suporte e orientação fiscal a Microempreendedores Individuais (MEIs), contribuindo para a regularização e crescimento desses pequenos negócios.
+Com sólida experiência na área fiscal e tributária, André é responsável pela elaboração e análise de planilhas especializadas em temas como DIFAL (Diferencial de Alíquota) e Substituição Tributária, além de possuir amplo conhecimento no envio das obrigações acessórias SPED ICMS/IPI e SPED Contribuições. Também oferece suporte e orientação fiscal a Microempreendedores Individuais (MEIs), contribuindo para a regularização e crescimento desses pequenos negócios.
 
-            Além da atuação técnica, André também é criador de conteúdo digital, compartilhando conhecimento sobre contabilidade, tributos e rotinas fiscais com foco em educação e orientação para profissionais e empreendedores.
+Além da atuação técnica, André também é criador de conteúdo digital, compartilhando conhecimento sobre contabilidade, tributos e rotinas fiscais com foco em educação e orientação para profissionais e empreendedores que desejam entender melhor suas obrigações e oportunidades no cenário contábil..<br />
           </p>
         </div>
       </div>
     </section>
+
   </main>
 
   <script>
     // Menu troca seções
     const menuItems = document.querySelectorAll('nav#mainMenu ul li');
     const sections = document.querySelectorAll('section.content-section');
+
     menuItems.forEach(item => {
       item.addEventListener('click', e => {
         e.preventDefault();
         menuItems.forEach(i => i.classList.remove('active'));
         item.classList.add('active');
+
         const sectionId = item.querySelector('a').dataset.section;
         sections.forEach(s => s.classList.remove('active'));
         document.getElementById(sectionId).classList.add('active');
@@ -235,6 +524,5 @@
       });
     });
   </script>
-
 </body>
 </html>
