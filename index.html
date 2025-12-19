@@ -1,810 +1,200 @@
 <!DOCTYPE html>
-<html lang="pt-BR" >
+                              <!--Declaração do tipo de documento.Diz ao navegador que este arquivo é HTML5.-->
+
+<html lang="pt-BR">
+                              <!--Tag raiz do HTML.lang="pt-BR" informa que o conteúdo está em português do Brasil.-->
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>André Donizete Vieira - Contador</title>
-  <meta name="description" content="Explicação completa da IN 33/2018 de Rondônia, incluindo lançamentos no SPED ICMS, diferencial de alíquota e exemplos práticos.">
-  <meta name="keywords" content="IN33/2018, IN 33/2018 Rondônia, instrução normativa 33 2018, diferencial de alíquota RO, SPED ICMS RO, substituição tributária    Rondônia, André Donizete Vieira contador,André vieira,Unip,sefin, como lançar diferencial de aliquota sped icms de rondonia">
-  <meta name="author" content="André Donizete Vieira">
-<meta name="description" content="Entenda a Lei 6.150/2025 que institui o Refaz ICMS em Rondônia. Veja como parcelar seus débitos de ICMS com até 95% de desconto. Acesse agora.">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1216753169982253"
-     crossorigin="anonymous"></script>
+                             <!--Cabeçalho do site.Tudo aqui NÃO aparece na tela,serve para configurações, SEO e links.-->
 
-  <!-- Font Awesome para ícones -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-  />
+  <meta charset="UTF-8">
+                              <!--Define o padrão de caracteres.UTF-8 permite acentos, ç, símbolos etc.-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Site do André</title>
+                              <!--Texto que aparece na aba do navegador.-->
+  <link rel="stylesheet" href="css/style.css">
+                              <!-- Font Awesome para ícones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <style>
-    /* Reset básico */
-    *{margin:0; padding:0; box-sizing:border-box;}
-    body {
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background:#f0f4f8; color:#1e293b; line-height:1.6; min-height:100vh; padding-top:70px;
-    }
-    nav#mainMenu {
-      background:#1e40af; box-shadow:0 4px 8px rgb(30 64 175 / 0.4);
-      position:fixed; width:100%; top:0; left:0; z-index:1000; display:flex; justify-content:center;
-    }
-    nav#mainMenu ul {
-      list-style:none; display:flex; gap:28px; padding:12px 24px; max-width:960px; width:100%; align-items:center;
-    }
-    nav#mainMenu ul li {
-      cursor:pointer; transition:background-color 0.3s ease; border-radius:12px;
-    }
-    nav#mainMenu ul li:hover, nav#mainMenu ul li.active {
-      background:#2563eb; box-shadow:0 4px 10px rgb(37 99 235 / 0.6);
-    }
-    nav#mainMenu ul li a {
-      text-decoration:none; color:#fff; font-weight:600;
-      display:flex; align-items:center; gap:8px; font-size:1rem; padding:8px 12px;
-    }
-    nav#mainMenu ul li a i {
-      font-size:1.1rem;
-    }
-    main.container {
-      max-width:960px; margin:24px auto; padding:0 16px 48px;
-    }
-    section.content-section {
-      display:none; background:#fff; padding:24px 32px; border-radius:14px; box-shadow:0 8px 24px rgb(30 64 175 / 0.1);
-      animation:fadeIn 0.5s ease forwards; min-height:320px;
-    }
-    section.content-section.active {display:block;}
-    @keyframes fadeIn {
-      from {opacity:0; transform:translateY(12px);} to {opacity:1; transform:translateY(0);}
-    }
-    h1, h2 {
-      color:#1e40af; margin-bottom:20px;
-    }
-    .forum-container {
-      display:flex; flex-direction:column; gap:32px;
-    }
-    .upload-area {
-      border:2px dashed #2563eb; border-radius:16px; padding:24px; text-align:center;
-      color:#2563eb; font-weight:600; font-size:1.1rem; cursor:pointer; transition:background-color 0.3s ease;
-      user-select:none;
-    }
-    .upload-area:hover {
-      background:#dbeafe;
-    }
-    .dicas-list {
-      display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:24px;
-    }
-    .dica-card {
-      background:#f9fafb; border-radius:12px; box-shadow:0 6px 18px rgb(37 99 235 / 0.1);
-      padding:16px; display:flex; flex-direction:column; gap:10px; transition:box-shadow 0.3s ease;
-    }
-    .dica-card:hover {
-      box-shadow:0 6px 18px rgb(37 99 235 / 0.4);
-    }
-    .dica-title {
-      font-weight:700; color:#1e3a8a; font-size:1.1rem; display:flex; align-items:center; gap:8px;
-    }
-    .dica-desc {
-      font-size:0.95rem; color:#334155; flex-grow:1;
-    }
-    .dica-link {
-      color:#2563eb; text-decoration:none; font-weight:600; font-size:0.9rem;
-      align-self:flex-start; display:flex; align-items:center; gap:6px; transition:color 0.3s ease;
-    }
-    .dica-link:hover {
-      color:#1e40af; text-decoration:underline;
-    }
-    .dica-link i {
-      font-size:1rem;
-    }
-    ul.produtos-list {
-      list-style-type:disc; padding-left:20px; color:#334155; font-weight:500;
-    }
-    ul.produtos-list li {
-      margin-bottom:10px;
-    }
-    .Download-content p {
-      margin-bottom:12px; font-size:1rem; color:#334155;
-    }
-    .contato-info p {
-      font-size:1rem; margin-bottom:10px;
-    }
-    .contato-info a {
-      color:#2563eb; font-weight:600; text-decoration:none;
-    }
-    .contato-info a:hover {
-      text-decoration:underline;
-    }
-    .bio-section {
-      display:flex; flex-wrap:wrap; gap:24px; align-items:center;
-    }
-    .bio-section img {
-      width:160px; height:160px; border-radius:50%; object-fit:cover;
-      border:4px solid #1e40af; box-shadow:0 0 12px #2563ebaa;
-    }
-    .bio-text {
-      max-width:700px; font-size:1rem; color:#334155;
-    }
-    @media (max-width:720px) {
-      nav#mainMenu ul {
-        flex-wrap:wrap; justify-content:center; gap:16px;
-      }
-      .bio-section {
-        flex-direction:column; align-items:center; text-align:center;
-      }
-      .bio-text {
-        max-width:100%;
-      }
-      .forum-container {
-        gap:20px;
-      }
-      .dicas-list {
-        grid-template-columns:1fr;
-      }
-    }
-/* Ajustes para mobile */
-@media (max-width:720px) {
-  nav#mainMenu ul {
-    flex-direction: column;
-    gap: 12px;
-    padding: 12px;
-  }
-
-  nav#mainMenu ul li a {
-    font-size: 0.95rem;
-    padding: 10px 8px;
-  }
-
-  .bio-section {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .bio-text {
-    max-width: 100%;
-    font-size: 0.95rem;
-  }
-
-  .forum-container {
-    gap: 20px;
-  }
-
-  .dicas-list, .download-container {
-    grid-template-columns: 1fr;
-  }
-
-  .produto-item, .download-item {
-    padding: 14px;
-  }
-
-  .accordion-item {
-    font-size: 0.95rem;
-    padding: 12px 16px;
-  }
-}
-/* Botão hambúrguer */
-#menuToggle {
-  display: none;
-  background: #1e40af;
-  border: none;
-  color: white;
-  font-size: 1.5rem;
-  padding: 10px 14px;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-/* Ajustes mobile */
-@media (max-width:720px) {
-  #menuToggle {
-    display: block;
-    position: absolute;
-    top: 12px;
-    right: 20px;
-    z-index: 1001;
-  }
-
-  nav#mainMenu ul {
-    display: none;
-    flex-direction: column;
-    gap: 12px;
-    width: 100%;
-    background: #1e40af;
-    position: absolute;
-    top: 55px;
-    left: 0;
-    padding: 12px 0;
-    border-radius: 0 0 12px 12px;
-  }
-
-  nav#mainMenu ul.show {
-    display: flex;
-  }
-}
-
-  </style>
 </head>
+
 <body>
-
-  <nav id="mainMenu" aria-label="Menu principal do site">
-  <!-- Botão hambúrguer para mobile -->
-  <button id="menuToggle" aria-label="Abrir menu">
-    <i class="fa-solid fa-bars"></i>
-  </button>
-
+                           <!-- Menu de navegação -->
+<nav class="menu">
   <ul>
-    <li class="active"><a href="#" data-section="forum"><i class="fa-solid fa-comments"></i> Fórum</a></li>
-    <li><a href="#" data-section="noticias"><i class="fa-solid fa-newspaper"></i> Notícias</a></li>
-    <li><a href="#" data-section="produtos"><i class="fa-solid fa-box-open"></i> Produtos e Serviços</a></li>
-    <li><a href="#" data-section="download"><i class="fa-solid fa-file-contract"></i> Download</a></li>
-    <li><a href="#" data-section="contato"><i class="fa-solid fa-envelope"></i> Contato</a></li>
-    <li><a href="#" data-section="parceiros"><i class="fa-solid fa-handshake"></i> Parceiros</a></li>
-    <li><a href="#" data-section="biografia"><i class="fa-solid fa-id-badge"></i> Biografia</a></li>
-    
+    <li><a href="#" data-secao="forum" class="menu-link">Fórum</a></li>
+    <li><a href="#" data-secao="noticias" class="menu-link">Nóticias</a></li>
+    <li><a href="#" data-secao="produtos" class="menu-link">Produtos</a></li>
+    <li><a href="#" data-secao="contato" class="menu-link">Contato</a></li>
+    <li><a href="#" data-secao="parceiros" class="menu-link"><i class="fa-solid fa-handshake"></i> Parceiros</a></li>
+    <li><a href="#" data-secao="biografia" class="menu-link">Biografia</a></li>
+
   </ul>
 </nav>
 
+
+                                            <!-- Container principal do site -->
   <main class="container">
 
-  <section id="forum" class="content-section active" tabindex="0" aria-label="Seção Fórum com dicas e arquivos">
-  <h1><i class="fa-solid fa-comments"></i> Fórum</h1>
+                                            <!-- Seção forum -->
+  <section id="forum" class="secao">
+  <h1>Fórum</h1>
 
-  <div class="forum-container">
+  <!-- Formulário de pergunta -->
+  <form id="form-pergunta" class="forum-form">
+    <input type="text" name="nome" placeholder="Seu nome" required>
+    <input type="text" name="titulo" placeholder="Título da pergunta" required>
+    <textarea name="descricao" placeholder="Descreva sua dúvida" required></textarea>
+    <button type="submit">Enviar Pergunta</button>
+  </form>
 
-    <h2 style="color:#1e40af; margin-bottom:16px; border-left: 6px solid #2563eb; padding-left:12px;">
-      DICAS
-    </h2>
-
-    <div class="accordion">
-
-      <a href="in-33-2018.html" class="accordion-item" style="text-decoration: none;">
-  COMO LANÇAR DIFERENCIAL DE ALÍQUOTA USO E CONSUMO SPED ICMS/RO
-</a>
-        
-      <button class="accordion-item">COMO PEGAR CRÉDITO DE ICMS FORNECEDOR SIMPLES NACIONAL</button>
-      <div class="accordion-content">
-        <p>Em Desenvolvimento</p>
-      </div>
-
-      <!-- Adicione mais itens aqui -->
-      
-   	
-	<button class="accordion-item">COMO SOLICITAR INTERNAMENTO DE NF-E</button>
-      	<div class="accordion-content">
-        <p>Em Desenvolvimento</p>
-      </div>
-
-      <!-- Adicione mais itens aqui -->
-
-      <button class="accordion-item">ERRO CNPJ DIFERENTE CHAVE DE ACESSO</button>
-      	<div class="accordion-content">
-        <p>Em Desenvolvimento</p>
-      </div>
-
-	<button class="accordion-item">CONSULTA SINTEGRA</button>
-      	<div class="accordion-content">
-        <p>Em Desenvolvimento</p>
-      </div>
-
-      <!-- Adicione mais itens aqui -->
-    </div>
-    <a href="arquivos/guia-sped-icms.pdf" target="_blank" rel="noopener" style="color:#2563eb; font-weight:600; text-decoration:none; font-size:1rem; margin-top:20px; display:inline-block;">
-      <i class="fa-solid fa-download"></i> Baixar PDF completo do SPED ICMS
-    </a>
-
-  </div>
-
-  <style>
-    .accordion-item {
-      background: #1e40af;
-      color: white;
-      cursor: pointer;
-      padding: 14px 20px;
-      width: 100%;
-      border: none;
-      text-align: left;
-      outline: none;
-      font-size: 1rem;
-      border-radius: 8px;
-      margin-top: 10px;
-      transition: background-color 0.3s ease;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .accordion-item:hover,
-    .accordion-item.active {
-      background: #2563eb;
-      box-shadow: 0 4px 10px rgba(37, 99, 235, 0.6);
-    }
-    .accordion-content {
-      padding: 12px 20px;
-      background: #f9fafb;
-      border-radius: 0 0 8px 8px;
-      display: none;
-      color: #334155;
-      font-size: 0.95rem;
-      margin-bottom: 12px;
-    }
-    .accordion-content p {
-      margin: 0;
-    }
-  </style>
-
-  <script>
-    document.querySelectorAll('.accordion-item').forEach(button => {
-      button.addEventListener('click', () => {
-        const active = document.querySelector('.accordion-item.active');
-        if (active && active !== button) {
-          active.classList.remove('active');
-          active.nextElementSibling.style.display = 'none';
-        }
-
-        button.classList.toggle('active');
-        const content = button.nextElementSibling;
-        if (button.classList.contains('active')) {
-          content.style.display = 'block';
-        } else {
-          content.style.display = 'none';
-        }
-      });
-    });
-  </script>
+  <!-- Lista de perguntas -->
+  <div id="forum-lista"></div>
 </section>
-<section id="noticias" class="content-section" tabindex="0" aria-label="Seção Notícias">
-  <h1><i class="fa-solid fa-newspaper"></i> Notícias</h1>
 
-  <!-- Nova notícia: Lei nº 6.150/2025 – Refaz ICMS -->
-  <article class="noticia-card">
-    <h2>📰 Lei nº 6.150/2025 institui o Refaz ICMS em Rondônia</h2>
-    <h4><strong>Publicado em:</strong> 8 de setembro de 2025</h4>
-    <p>Institui o Programa de Recuperação de Créditos de ICMS da Fazenda Pública Estadual - Refaz ICMS.</p>
-    <p><strong>O GOVERNADOR DO ESTADO DE RONDÔNIA:</strong></p>
-    <p>Faço saber que a Assembleia Legislativa decreta e eu sanciono a seguinte Lei:</p>
-    <br>
-    <p>Art. 1° Fica instituído o Programa de Recuperação de Créditos de ICMS da Fazenda Pública Estadual - Refaz ICMS, relacionados com o ICMS cujos fatos geradores tenham ocorrido até 31 de dezembro de 2024, constituídos ou não, inclusive os espontaneamente denunciados pelo contribuinte, inscritos ou não em dívida ativa, ainda que ajuizados.</p>
-<p>
-<br>
-§ 1° O débito será consolidado, de forma individualizada, na data do pedido de ingresso no programa, com todos os acréscimos legais vencidos, previstos na legislação vigente, na data dos respectivos fatos geradores da obrigação tributária, não se aplicando a vedação prevista no § 2° do art. 8° da Lei n° 2.913, de 3 de dezembro de 2012.
-</p>
-<p>
-§ 2° No caso de pagamento em parcelas, a adesão ao Refaz ICMS compreenderá todos os débitos passíveis de inclusão no referido Programa, não sendo permitida a escolha individualizada pelo contribuinte, ressalvada a diferenciação necessária para a correta repartição de receita.</p>
-<br>
+                                          
+                                             <!-- Seção Notícias -->
+  <section id="noticias" class="secao">
+  <h1>Notícias</h1>
 
-<p>Art. 2° A opção pelo Refaz ICMS contemplará os benefícios abaixo enumerados:
-
-
-I - redução da multa e dos juros de mora; e
-
-
-II - pagamento à vista ou parcelado do crédito tributário.
-
-
-Parágrafo único. O parcelamento previsto nesta Lei poderá ser deferido, independentemente da existência de parcelamentos anteriores celebrados, ressalvado o disposto no art. 8°.</p><br>
-
-
-<p>Art. 3° Para usufruir dos benefícios do Programa, o sujeito passivo deverá formalizar sua adesão, que se efetivará com o pagamento de parcela única ou da primeira parcela, até 23 de dezembro de 2025, observado o disposto no § 3°.
-</p><br>
-
-<p>§ 1° Tratando-se de crédito tributário decorrente de auto de infração ou de penalidade pecuniária lançada por descumprimento de obrigação tributária, a fruição dos benefícios estabelecidos no art. 5°, para pagamento da multa punitiva, fica condicionada ao pagamento do imposto lançado.</p>
-
-
-<p>§ 2° A parcela do crédito tributário referente ao imposto deverá ser recolhida, conforme a modalidade do benefício escolhida entre os incisos I a VII do art. 5°, por meio de Documento de Arrecadação de Receitas Estaduais - DARE, pago antecipadamente a parcela referente à multa pecuniária, a qual somente será disponibilizada para pagamento na mesma modalidade escolhida para o pagamento do imposto.</p>
-
-
-<p>§ 3° Caso o decurso do prazo previsto no caput ocorra em dia não útil ou sem expediente bancário, o pagamento da parcela única ou da primeira parcela deverá ser antecipado para o dia útil e com expediente bancário anterior àquele.</p>
-
-
-<p>§ 4° A adesão ao Refaz ICMS ficará limitada a débitos consolidados de até R$ 150.000.000,00 (cento e cinquenta milhões de reais), permitida a unificação de Certidão de Dívida Ativa - CDA, por CNPJ ou Inscrição Estadual.</p>
-
-
-<p>§ 5° A adesão ao Refaz ICMS não refletirá nos percentuais correspondentes a título de contribuição para o Fundo para Infra-estrutura de Transporte e Habitação - Fitha, conforme percentuais estabelecidos na Lei Complementar n° 292, de 29 de dezembro de 2003, que institui o Fundo.</p>
-<br>
-
-<p>Art. 4° Independentemente do pagamento de taxas, a adesão ao programa dar-se-á mediante o recolhimento aos cofres públicos, dentro do prazo previsto no art. 3°, dos valores contemplados com o benefício, cujo cálculo e emissão do DARE serão disponibilizados por meio do Portal do Contribuinte, acessível no sítio da Secretaria de Estado de Finanças - Sefin, na internet, no endereço eletrônico www.sefin.ro.gov.br.</p>
-<br>
-
-Parágrafo único. A simples emissão do DARE, não configura a adesão ao Refaz ICMS, nem implica direito relativo ao benefício concedido por esta Lei, os quais se concretizarão apenas por meio do seu pagamento dentro do prazo estabelecido no art. 3°.
-<p></p>
-<br>
-<p>Art. 5° Os créditos tributários referentes ao ICMS consolidados poderão ser pagos:</p>
-
-<p>
-I - em parcela única, com redução de até 95% (noventa e cinco por cento) das multas punitivas e moratórias e dos juros de mora;</p>
-
-<p>
-II - em até 12 (doze) parcelas mensais e sucessivas, com redução de até 85% (oitenta e cinco por cento) das multas punitivas e moratórias e dos juros de mora;</p>
-
-<p>
-III - em até 24 (vinte e quatro) parcelas mensais e sucessivas, com redução de até 80% (oitenta por cento) das multas punitivas e moratórias e dos juros de mora;</p>
-
-<p>
-IV - em até 36 (trinta e seis) parcelas mensais e sucessivas, com redução de até 75% (setenta e cinco por cento) das multas punitivas e moratórias e dos juros de </p>mora;
-
-<p>
-V - em até 60 (sessenta) parcelas mensais e sucessivas, com redução de até 70% (setenta por cento) das multas punitivas e moratórias e dos juros de mora;</p>
-
-<p>
-VI - em até 120 (cento e vinte) parcelas mensais e sucessivas, com redução de até 65% (sessenta e cinco por cento) das multas punitivas e moratórias e dos juros de mora;</p>
-
-<p>
-VII - em até 180 (cento e oitenta) parcelas mensais e sucessivas, com redução de até 60% (sessenta por cento) das multas punitivas e moratórias e dos juros de mora, para as empresas em processo de recuperação judicial, inclusive para o contribuinte para o qual tenha sido declarada judicialmente a sua falência, nos termos do Convênio ICMS 59, de 22 de junho de 2012.</p>
-
-<br>
-<p>
-§ 1° O valor da parcela mensal não poderá ser inferior a:</p>
-<br>
-<p>
-
-I - R$ 600,00 (seiscentos reais), para os contribuintes enquadrados no regime normal de tributação;</p>
-<p>
-
-
-II - R$ 400,00 (quatrocentos reais), para os contribuintes optantes pelo Regime Especial Unificado de Arrecadação de Tributos e Contribuições devidos pelas Microempresas e Empresas de Pequeno Porte - Simples Nacional; e</p>
-
-<p>
-
-III - R$ 200,00 (duzentos reais), para o Microempreendedor Individual - MEI, produtor rural e pessoas físicas.</p>
-<br>
-<p>
-§ 2° Os regimes de pagamentos mencionados serão considerados no momento da adesão ao Refaz ICMS.</p>
-<br>
-<p>
-§ 3° Para pessoa jurídica não inscrita no estado de Rondônia aplicar-se-ão os percentuais constantes nos incisos do caput.</p>
-<br>
-<p>Art. 6° Para fins de pagamento dos débitos fiscais apurados na forma desta Lei, sem prejuízo das reduções previstas no art. 5°, o crédito tributário lançado até 31 de janeiro de 2021 terá seu valor revisado em conformidade com a Lei n° 6.062, de 27 de junho de 2025.</p>
-<br>
-<p>
-§ 1° Após a revisão prevista no caput, os juros serão calculados na forma prevista na legislação do ICMS do estado de Rondônia.</p>
-<p>
-
-§ 2° Os juros vincendos, calculados na forma prevista na legislação do ICMS do estado de Rondônia, serão contados a partir do mês em que se concretizar o parcelamento, até o mês do efetivo pagamento de cada parcela, não incidindo sobre os juros vencidos.</p>
-
-<p>
-§ 3° No pagamento de parcela em atraso serão aplicados os acréscimos legais previstos na legislação do ICMS do estado de Rondônia.</p>
-<br>
-<p>
-
-Art. 7° O contrato celebrado em decorrência do parcelamento de que trata esta Lei será considerado descumprido e automaticamente rescindido, independentemente de qualquer ato da autoridade fazendária, quando ocorrer:</p>
-<br>
-<p>
-I - a inobservância de qualquer das exigências estabelecidas nesta Lei;</p>
-
-<p>
-II - a falta de pagamento de qualquer uma das parcelas, por prazo superior a 90 (noventa) dias;</p>
-
-<p>
-III - a ausência do pagamento do mesmo tributo beneficiado, por prazo superior a 90 (noventa) dias, a contar da data do vencimento previsto na legislação, cujo fato gerador tenha ocorrido a partir da data de efetivação da adesão ao programa;</p>
-
-<p>
-IV - o atraso no pagamento de mais de 3 (três) parcelas, sucessivas ou não; e</p>
-
-<p>
-V - a inclusão de qualquer débito, anteriormente incluído no programa de parcelamento previsto nas Leis n° 2.840, de 3 de setembro de 2012, n° 3.835, de 27 de junho de 2016, n° 4.214, de 18 de dezembro de 2017, n° 4.703, de 12 de dezembro de 2019, n° 4.953, de 19 de janeiro de 2021, e n° 5.621, de 18 de setembro de 2023, sem a observância dos requisitos previstos no art. 8°.</p>
-<br>
-<p>
-Parágrafo único. Ocorrida a rescisão, nos termos do caput deverão ser restabelecidos, em relação ao saldo devedor, os valores originários das multas e dos juros dispensados, prosseguindo-se na cobrança do débito remanescente.</p>
-<br>
-<p>
-Art. 8° Tratando de parcelamento ou reparcelamento em curso ou já rescindido efetuado com os benefícios decorrentes dos programas de parcelamento previstos nas Leis n° 2.840, de 2012, n° 3.835, de 2016, n° 4.214, de 2017, n° 4.703, de 2019, n° 4.953, de 2021, e n° 5.621, de 2023, somente será permitida a adesão ao Refaz ICMS para pagamento parcelado, nos termos do art. 5°, desde que a primeira parcela seja de no mínimo 20% (vinte por cento) do valor do saldo devedor.</p>
-<br>
-<p>
-Parágrafo único. O limite mínimo de que trata o caput não se aplica aos contribuintes que aderiram ao Programa COMPENSA-RO, por meio de pedido administrativo dirigido à Procuradoria Geral do Estado, nos termos do art. 4° da Lei n° 4.200, de 12 de dezembro de 2017.</p>
-
-<br>
-<p>Art. 9° O benefício de que trata esta Lei:</p><br>
-
-
-<p>I - não autoriza restituição ou compensação das quantias pagas; e</p>
-
-
-<p>II - não autoriza o levantamento, pelo contribuinte ou pelo interessado, de importância depositada em juízo, quando houver decisão transitada em julgado a favor do Estado.</p>
-<br>
-
-<p>Art. 10. A adesão ao Refaz ICMS implica o reconhecimento, em caráter irretratável e irrevogável, dos créditos tributários nele incluídos, a renúncia de qualquer defesa ou recurso no âmbito administrativo ou judicial, a desistência dos já interpostos, bem como a aceitação das demais condições estabelecidas na Legislação Tributária Estadual.</p>
-
-<br>
-<p>Art. 11. Aplicam-se à quitação integral dos créditos tributários incluídos no Refaz ICMS, as disposições do art. 9° da Lei Federal n° 10.684, de 30 de maio de 2003.</p
-
-<br>
-<p>Art. 12. Esta Lei entra em vigor na data de sua publicação.</p>
-
-
-Rondônia, 8 de setembro de 2025; 204° da Independência e 137° da República.</p>
-    <a href="https://legislacao.sefin.ro.gov.br/textoLegislacao.jsp?texto=2623" class="botao-download">
-      <i class="fa-solid fa-file-pdf"></i> Ver texto completo da lei
-     
-
-</a>
-  </article>
-
-  <!-- Notícia contextual baseada em fonte da Assembleia Legislativa -->
-  <article class="noticia-card">
-    <h2></h2>
-    <p><strong>Comunicado:</strong></p>
-    <p></p>
-  </article>
-
-  <!-- Outras notícias já existentes -->
-  <!-- ... -->
-</section> 
-    <section id="produtos" class="content-section" tabindex="0" aria-label="Seção Produtos e Serviços">
-  <h1><i class="fa-solid fa-box-open"></i> Produtos e Serviços</h1>
-
-  <!-- Produtos Pagos -->
-  <div class="produto-item">
-    <h2>Planilha DIFAL e Substituição Tributária</h2>
-    <p>Automatize seus cálculos de DIFAL e Substituição Tributária de forma prática e segura.</p>
-    <a href="https://go.hotmart.com/V98773824O?dp=1" target="_blank" class="botao-comprar">
-      <i class="fa-solid fa-cart-shopping"></i> Comprar agora
-    </a>
+  <div class="blog-card">
+    <img src="imagens/refaz.jpg" alt="Lei do ICMS em Rondônia">
+    <div class="blog-content">
+      <h2>Governo de RO facilita regularização de débitos fiscais com novo Refaz ICMS 2025</h2>
+      <p>Entenda as principais mudanças na legislação tributária estadual.</p>
+      <a href="noticia1.html" target="_blank" class="botao">Leia mais</a>
+    </div>
   </div>
 
-  <div class="produto-item">
-    <h2>Planilha Controle de Parcelamentos</h2>
-    <p>Gerencie parcelas pagas, vencidas e a vencer com relatórios automáticos.</p>
-    <a href="https://go.hotmart.com/V98773824O?dp=1" target="_blank" class="botao-comprar">
-      <i class="fa-solid fa-cart-shopping"></i> Comprar agora
-    </a>
+ <div class="blog-card">
+    <img src="imagens/sped icms.png" alt="Lei do ICMS em Rondônia">
+    <div class="blog-content">
+      <h2>Receita Federal lançar Atualização Manual EFD ICMS</h2>
+      <p>Entenda as principais mudanças na legislação tributária estadual.</p>
+      <a href="noticia2.html" target="_blank" class="botao">Leia mais</a>
+    </div>
   </div>
 
-  <hr style="margin:30px 0; border: none; height: 2px; background: #2563eb;">
 
-  <!-- PDFs Gratuitos -->
-  <h2 style="color:#1e40af; margin-bottom:12px;"><i class="fa-solid fa-file-pdf"></i> PDFs Gratuitos</h2>
-  <div class="produto-item">
-    <h3>Guia Completo SPED ICMS</h3>
-    <p>Material explicativo com passo a passo para escrituração e ajustes no SPED ICMS.</p>
-    <a href="arquivos/guia-sped-icms.pdf" target="_blank" class="botao-download">
-      <i class="fa-solid fa-download"></i> Baixar PDF
+</section>
+
+                                               <!-- Seção Produtos -->
+  <section id="produtos" class="secao">
+  <h1>Produtos</h1>
+
+  <!-- Linha de Produtos Gratuitos -->
+  <h2>Produtos Gratuitos</h2>
+  <div class="produtos-container">
+    <!-- Produto gratuito 1 -->
+    <a href="arquivos/relatorio mensal.doc" download class="produto-card">
+      <img src="imagens/mei.jpg" alt="MEI">
+      <h3>Modelo Relatorio Receita Bruta MEI</h3>
+      <p>Todos os MEI Estão Obrigados a fazer Esse Relatorio.</p>
+      <span class="botao-baixar">Baixar agora</span>
     </a>
-  </div>
 
-  <div class="produto-item">
-    <h3>Manual DIFAL</h3>
-    <p>Guia rápido com cálculos e regras do Diferencial de Alíquota.</p>
-    <a href="arquivos/manual-difal.pdf" target="_blank" class="botao-download">
-      <i class="fa-solid fa-download"></i> Baixar PDF
+    
+
+  <hr> <!-- Linha divisória -->
+
+                               <!-- Linha de Produtos à Venda -->
+  <h2>Produtos à Venda</h2>
+  <div class="produtos-container">
+                                <!-- Produto pago 1 -->
+    
+      <h3>Planilha Difal Base Dupla</h3>
+         <a href="https://pay.hotmart.com/T85951117Q?bid=1766083563692"target="_blank" class="produto-card">
+      <img src="imagens/difal.png" alt="Planilha Fiscal Avançada">
+         <iframe width="300" height="170" 
+          src="https://www.youtube.com/embed/SEU_VIDEO_ID" 
+          title="Vídeo do produto" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+         </iframe>
+      <p>Faça calculo de Difal de forma rapida e simples.</p>
+      <span class="botao-comprar">Comprar</span>
     </a>
-  </div>
 
-  <!-- Planilhas Gratuitas -->
-  <h2 style="color:#1e40af; margin-top:20px; margin-bottom:12px;"><i class="fa-solid fa-file-excel"></i> Planilhas Gratuitas</h2>
-  <div class="produto-item">
-    <h3>Planilha Controle de ICMS</h3>
-    <p>Controle simples para lançamentos e acompanhamento do ICMS.</p>
-    <a href="arquivos/planilha-controle-icms.xlsx" target="_blank" class="botao-download">
-      <i class="fa-solid fa-download"></i> Baixar Planilha
-    </a>
-  </div>
-
-  <div class="produto-item">
-    <h3>Planilha Cálculo ST</h3>
-    <p>Automatiza o cálculo da Substituição Tributária com base e alíquota.</p>
-    <a href="arquivos/calculo-st.xlsx" target="_blank" class="botao-download">
-      <i class="fa-solid fa-download"></i> Baixar Planilha
+    <!-- Produto pago 2 -->
+    <a href="https://go.hotmart.com/V98773824O?dp=1" target="_blank" class="produto-card">
+      <img src="imagens/controle mei.png" alt="Planilha de Controle do MEI">
+      <h3>Planilha de Controle limite MEI</h3>
+      <p>Gerencie seu limite anual do MEI e saldo de faturamento.</p>
+      <span class="botao-comprar">Comprar</span>
     </a>
   </div>
 </section>
+                                                           <!-- Seção Contato -->
+   <section id="contato" class="secao">
+  <h1>Contato</h1>
+  <div class="contato-container">
 
-<style>
-  .produto-item {
-    background:#f9fafb; padding:16px; border-radius:12px; 
-    box-shadow:0 6px 18px rgb(37 99 235 / 0.1);
-    margin-bottom:20px;
-  }
-  .produto-item h2, .produto-item h3 {
-    color:#1e3a8a;
-  }
-  .botao-comprar, .botao-download {
-    display:inline-block; background:#2563eb; color:white;
-    padding:10px 16px; border-radius:8px; text-decoration:none; margin-top:10px;
-    font-weight:600; transition: background 0.3s ease;
-  }
-  .botao-comprar:hover, .botao-download:hover {
-    background:#1e40af;
-  }
-</style>
-
-    <section id="download" class="content-section" tabindex="0" aria-label="Seção Download">
-  <h1><i class="fa-solid fa-file-contract"></i> Download</h1>
-  <h3>📂 Arquivos para Download</h3>
-
-  <div class="download-container">
-
-    <!-- Arquivo Word -->
-    <div class="download-item">
-      <h4><i class="fa-solid fa-file-word" style="color:#2b579a;"></i> Modelo de Requerimento REFAZ</h4>
-      <p>Arquivo em Word (.docx) pronto para edição.</p>
-      <a href="REQ - MODELO REFAZ.docx" download class="botao-download">
-      <i class="fa-solid fa-download"></i> Baixar WORD
-	</a>
+    <div class="contato-item">
+      <i class="fa-solid fa-phone"></i>
+      <span>+55 69 99262-1150</span>
     </div>
 
-    <!-- Arquivo PDF -->
-    <div class="download-item">
-      <h4><i class="fa-solid fa-file-pdf" style="color:#d32f2f;"></i> Guia Completo SPED ICMS</h4>
-      <p>Material em PDF explicando lançamentos e regras.</p>
-      <a href="arquivos/guia-sped-icms.pdf" download class="botao-download">
-        <i class="fa-solid fa-download"></i> Baixar PDF
+    <div class="contato-item">
+      <i class="fa-solid fa-envelope"></i>
+      <span>vieiraandre62@gmail.com</span>
+    </div>
+
+    <div class="contato-item">
+      <i class="fa-brands fa-linkedin"></i>
+      <a href="https://www.linkedin.com/in/andre-donizete-vieira-3bb79b140" target="_blank">LinkedIn</a>
+    </div>
+
+    <div class="contato-item">
+      <i class="fa-brands fa-youtube"></i>
+      <a href="https://www.youtube.com/@SeuCanal" target="_blank">YouTube</a>
+    </div>
+
+  </div>
+  </section>
+                                                                      <!-- Seção parceiros -->
+  <section id="parceiros" class="secao">
+  <h2><i class="fa-solid fa-handshake"></i> Parceiros</h2>
+
+  <div class="cards-parceiros">
+
+    <div class="card-parceiro">
+      <img src="imagens/solaris.jpeg" alt="Escritório Solaris">
+      <h3>Escritório Contábil Solaris</h3>
+      <p>Assessoria contábil e fiscal para micro e pequenas empresas.</p>
+      <a href="parceiros.html" target="_blank" class="botao-parceiro">
+        Acessar site
       </a>
     </div>
 
-    <!-- Arquivo Excel -->
-    <div class="download-item">
-      <h4><i class="fa-solid fa-file-excel" style="color:#217346;"></i> Planilha Controle ICMS</h4>
-      <p>Planilha em Excel para organização e controle fiscal.</p>
-      <a href="arquivos/planilha-controle-icms.xlsx" download class="botao-download">
-        <i class="fa-solid fa-download"></i> Baixar Excel
-      </a>
-    </div>
-
-    <!-- 📑 Modelos de Contratos (Word) -->
-    <div class="download-item">
-      <h4><i class="fa-solid fa-file-signature" style="color:#2b579a;"></i> Modelos de Contratos</h4>
-      <p>Pacote com contratos prontos em Word (.docx).</p>
-      <a href="arquivos/modelos-contratos.docx" download class="botao-download">
-        <i class="fa-solid fa-download"></i> Baixar Contratos
-      </a>
-    </div>
-
-    <!-- 📊 Planilhas Extras (Excel) -->
-    <div class="download-item">
-      <h4><i class="fa-solid fa-table" style="color:#217346;"></i> Planilhas Extras</h4>
-      <p>Planilhas em Excel para diversos controles administrativos.</p>
-      <a href="arquivos/planilhas-extras.xlsx" download class="botao-download">
-        <i class="fa-solid fa-download"></i> Baixar Planilhas
+    <div class="card-parceiro">
+      <img src="imagens/carlos.png" alt="carlos robert">
+      <h3>Carlos Robert Informatica</h3>
+      <p>Solução garantida para seus problemas técnicos!.</p>
+      <a href="parceiros.html" target="_blank" class="botao-parceiro">
+        Acessar site
       </a>
     </div>
 
   </div>
 </section>
-
-<style>
-  .download-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    margin-top: 20px;
-  }
-
-  .download-item {
-    background: #f9fafb;
-    padding: 16px;
-    border-radius: 12px;
-    box-shadow: 0 6px 18px rgba(37, 99, 235, 0.1);
-    text-align: center;
-  }
-
-  .download-item h4 {
-    color: #1e3a8a;
-    margin-bottom: 8px;
-  }
-
-  .download-item p {
-    font-size: 0.95rem;
-    color: #334155;
-    margin-bottom: 12px;
-  }
-
-  .botao-download {
-    display: inline-block;
-    background: #2563eb;
-    color: white;
-    padding: 10px 16px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: background 0.3s ease;
-  }
-
-  .botao-download:hover {
-    background: #1e40af;
-  }
-</style>
-
-    <section id="contato" class="content-section" tabindex="0" aria-label="Seção Contato">
-      <h1><i class="fa-solid fa-envelope"></i> Contato</h1>
-      <p>Celular: <a href="mailto:69 992621150">69 992621150</a></p>
-      <p>Email: <a href="mailto:vieiraandre62@gmail.com">vieiraandre62@gmail.com</a></p>
-      <p>LinkedIn: <a href="#" target="_blank" rel="noopener noreferrer">https://www.linkedin.com/in/andre-donizete-vieira-3bb79b140</a></p>
-      <p>Instagram: <a href="#" target="_blank" rel="noopener noreferrer">Seu Instagram</a></p>
-    </section>
-<section id="parceiros" class="content-section" tabindex="0" aria-label="Seção Parceiros">
-  <h1><i class="fa-solid fa-handshake"></i> Parceiros</h1>
-
-  <div class="dicas-list">
-
-    <div class="dica-card">
-      <div class="dica-title">
-        <i class="fa-solid fa-building"></i> Escritório Contábil Solaris
-      </div>
-<a href="#" target="_blank" class="dica-link">
-         <a href="parceiros.html" class="accordion-item" style="text-decoration: none;">
-  ACESSE O SITE DO NOSSO PARCEIRO
-</a>
-
-       <img src="solaris.jpeg" alt="" />
-      <div class="dica-desc">
-        Parceiro especializado em assessoria contábil e fiscal para empresas do Simples Nacional.
-      </div>
-    </div>
-
-  
-</section>
-    <section id="biografia" class="content-section" tabindex="0" aria-label="Seção Biografia">
-      <h1><i class="fa-solid fa-id-badge"></i> Biografia</h1>
-      <div class="bio-section">
-        <img src="sua-foto.jpg" alt="Foto de André Donizete Vieira" />
-        <div class="bio-text">
-          <p>
-            André Donizete Vieira é formado em Ciências Contábeis pela Universidade Paulista (UNIP), com graduação concluída entre 2016 e 2019. Atualmente, atua como Analista Fiscal na empresa Dydyo Refrigerantes, localizada em Porto Velho, Rondônia, onde também reside.
-
-Com sólida experiência na área fiscal e tributária, André é responsável pela elaboração e análise de planilhas especializadas em temas como DIFAL (Diferencial de Alíquota) e Substituição Tributária, além de possuir amplo conhecimento no envio das obrigações acessórias SPED ICMS/IPI e SPED Contribuições. Também oferece suporte e orientação fiscal a Microempreendedores Individuais (MEIs), contribuindo para a regularização e crescimento desses pequenos negócios.
-
-Além da atuação técnica, André também é criador de conteúdo digital, compartilhando conhecimento sobre contabilidade, tributos e rotinas fiscais com foco em educação e orientação para profissionais e empreendedores que desejam entender melhor suas obrigações e oportunidades no cenário contábil..<br />
-          </p>
-        </div>
-      </div>
-    </section>
+                                                                             <!-- biografia -->
+   <section id="biografia" class="secao">
+    <h1>Biografia</h1>
+    <p>André Donizete Vieira é formado em Ciências Contábeis pela Universidade Paulista (UNIP), com graduação concluída entre 2016 e 2019. Atualmente, atua como Analista Fiscal na empresa Dydyo Refrigerantes, localizada em Porto Velho, Rondônia, onde também reside. Com sólida experiência na área fiscal e tributária, André é responsável pela elaboração e análise de planilhas especializadas em temas como DIFAL (Diferencial de Alíquota) e Substituição Tributária, além de possuir amplo conhecimento no envio das obrigações acessórias SPED ICMS/IPI e SPED Contribuições. Também oferece suporte e orientação fiscal a Microempreendedores Individuais (MEIs), contribuindo para a regularização e crescimento desses pequenos negócios. Além da atuação técnica, André também é criador de conteúdo digital, compartilhando conhecimento sobre contabilidade, tributos e rotinas fiscais com foco em educação e orientação para profissionais e empreendedores que desejam entender melhor suas obrigações e oportunidades no cenário contábil..</p>
+   </section>
 
   </main>
-
-  <script>
-  // Menu troca seções
-  const menuItems = document.querySelectorAll('nav#mainMenu ul li');
-  const sections = document.querySelectorAll('section.content-section');
-
-  menuItems.forEach(item => {
-    item.addEventListener('click', e => {
-      e.preventDefault();
-      menuItems.forEach(i => i.classList.remove('active'));
-      item.classList.add('active');
-
-      const sectionId = item.querySelector('a').dataset.section;
-      sections.forEach(s => s.classList.remove('active'));
-      document.getElementById(sectionId).classList.add('active');
-      document.getElementById(sectionId).focus();
-
-      // Fechar menu mobile ao clicar em um item
-      const menuUl = document.querySelector('nav#mainMenu ul');
-      menuUl.classList.remove('show');
-    });
-  });
-
-  // Menu hambúrguer
-  const menuToggle = document.getElementById('menuToggle');
-  const menuUl = document.querySelector('nav#mainMenu ul');
-
-  menuToggle.addEventListener('click', () => {
-    menuUl.classList.toggle('show');
-  });
-</script>
-
-
- <a href="https://wa.me/5569992621150" 
-   class="whatsapp-float" 
-   target="_blank" 
-   title="Fale conosco no WhatsApp">
-  📲 Precisa de ajuda?
-</a>
-
-<style>
-.whatsapp-float {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #25d366;
-  color: white;
-  font-size: 16px;
-  font-weight: bold;
-  padding: 12px 20px;
-  border-radius: 30px;
-  text-decoration: none;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-  z-index: 9999;
-  transition: background 0.3s;
-}
-.whatsapp-float:hover {
-  background-color: #1ebd5a;
-}
-</style>
+ <script src="js/script.js"></script>
+                                    <!-- Botão WhatsApp flutuante -->
+     <a href="https://wa.me/5569992621150" target="_blank" class="whatsapp-float" title="Fale comigo no WhatsApp">
+         <i class="fa-brands fa-whatsapp"></i>
+     </a>
+     <a href="https://wa.me/5569992621150" 
+          class="whatsapp-float" 
+          target="_blank" 
+          title="Fale comigo no WhatsApp">
+         <i class="fa-brands fa-whatsapp"></i>
+      </a>
+</body>
+</html>

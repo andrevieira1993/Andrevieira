@@ -2,186 +2,42 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Escritório de Contabilidade Solaris</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Parceiro – Nome do Parceiro</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Font Awesome -->
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background: #ecfdf5;
-      color: #064e3b;
-    }
-
-    /* TOPO */
-    header {
-      background: #047857;
-      padding: 20px;
-      text-align: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    }
-
-    header h1 {
-      color: #ffffff;
-      font-size: 1.8rem;
-    }
-
-    /* CONTAINER */
-    .container {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 16px;
-    }
-
-    /* SERVIÇOS */
-    .servicos h2,
-    .contatos h2 {
-      text-align: center;
-      color: #047857;
-      margin-bottom: 25px;
-      font-size: 1.6rem;
-    }
-
-    .lista-servicos {
-      list-style: none;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 16px;
-    }
-
-    .lista-servicos li {
-      background: #d1fae5;
-      padding: 14px 18px;
-      border-radius: 10px;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    /* CONTATOS */
-    .contatos {
-      margin-top: 50px;
-      padding-top: 30px;
-      border-top: 2px solid #a7f3d0;
-    }
-
-    .contato-item {
-      text-align: center;
-      margin-bottom: 25px;
-    }
-
-    .contato-item strong {
-      display: block;
-      font-size: 1.3rem;
-      margin-bottom: 8px;
-      color: #065f46;
-    }
-
-    .contato-item a {
-      color: #047857;
-      font-weight: 600;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 1.05rem;
-    }
-
-    .contato-item a:hover {
-      text-decoration: underline;
-    }
-
-    /* RODAPÉ */
-    footer {
-      background: #047857;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-    }
-
-    footer a {
-      color: #bbf7d0;
-      font-weight: 600;
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-
-    /* RESPONSIVO */
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 1.5rem;
-      }
-    }
-  </style>
+  <!-- CSS exclusivo -->
+  <link rel="stylesheet" href="css/parceiros.css">
 </head>
-
 <body>
 
-  <!-- TOPO -->
-  <header>
-    <h1>Escritório de Contabilidade Solaris</h1>
-  </header>
+  <section class="parceiro-container">
 
-  <!-- CONTEÚDO -->
-  <div class="container">
+    <div class="parceiro-card">
 
-    <!-- SERVIÇOS -->
-    <section class="servicos">
-      <h2><i class="fa-solid fa-briefcase"></i> Nossos Serviços</h2>
+      <img src="imagens/solaris.jpeg" alt="Nome do Parceiro">
 
-      <ul class="lista-servicos">
-        <li><i class="fa-solid fa-building"></i> Abertura de Empresas</li>
-        <li><i class="fa-solid fa-door-closed"></i> Encerramento de Empresas</li>
-        <li><i class="fa-solid fa-file-invoice-dollar"></i> Parcelamento de Débitos</li>
-        <li><i class="fa-solid fa-file-lines"></i> Declaração de Obrigações Acessórias</li>
-        <li><i class="fa-solid fa-money-bill"></i> Imposto de Renda Pessoa Física</li>
-      </ul>
-    </section>
+      <h1>Escritorio De Contabilidade Solaris</h1>
 
-    <!-- CONTATOS -->
-    <section class="contatos">
-      <h2><i class="fa-solid fa-phone"></i> Contatos</h2>
+      <p class="parceiro-servico">
+        Escritório especializado em contabilidade fiscal, tributária
+        e assessoria para empresas do Simples Nacional, Lucro Presumido
+        e Lucro Real.
+      </p>
 
-      <div class="contato-item">
-        <strong>Daniele</strong>
-        <a href="https://wa.me/5569992949360" target="_blank">
-          <i class="fa-brands fa-whatsapp"></i> 69 99294-9360
+      <div class="parceiro-contato">
+        <p><strong>📞 Telefone:</strong> (69) 99294-9360</p>
+        <p><strong>📧 E-mail:</strong> contato@parceiro.com.br</p>
+      </div>
+
+      <div class="parceiro-redes">
+        <a href="https://www.instagram.com/solariscontabil?igsh=MWttOHFvMXJ5YWJ0dA==" target="_blank">
+          Instagram
         </a>
       </div>
 
-      <div class="contato-item">
-        <strong>Francisco</strong>
-        <a href="https://wa.me/5568999941394" target="_blank">
-          <i class="fa-brands fa-whatsapp"></i> 68 99994-1394
-        </a>
-      </div>
-    </section>
+    </div>
 
-  </div>
-
-  <!-- RODAPÉ -->
-  <footer>
-    <p>
-      <i class="fa-brands fa-instagram"></i>
-      <a href="https://www.instagram.com/solariscontabil?igsh=MWttOHFvMXJ5YWJ0dA==" target="_blank">
-        @solariscontabil
-      </a>
-    </p>
-  </footer>
-
+  </section>
+<script src="../js/parceiros.js"></script>
 </body>
 </html>
