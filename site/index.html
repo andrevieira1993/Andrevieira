@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+                              <!--Declaração do tipo de documento.Diz ao navegador que este arquivo é HTML5.-->
+
+<html lang="pt-BR">
+                              <!--Tag raiz do HTML.lang="pt-BR" informa que o conteúdo está em português do Brasil.-->
+
+<head>
+                             <!--Cabeçalho do site.Tudo aqui NÃO aparece na tela,serve para configurações, SEO e links.-->
+
+  <meta charset="UTF-8">
+                              <!--Define o padrão de caracteres.UTF-8 permite acentos, ç, símbolos etc.-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Site do André</title>
+                              <!--Texto que aparece na aba do navegador.-->
+  <link rel="stylesheet" href="css/style.css">
+                              <!-- Font Awesome para ícones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+
+<body>
+                           <!-- Menu de navegação -->
+<nav class="menu">
+  <ul>
+    <li><a href="#" data-secao="inicio" class="menu-link">Início</a></li>
+    <li><a href="#" data-secao="forum" class="menu-link">Fórum</a></li>
+    <li><a href="#" data-secao="noticias" class="menu-link">Nóticias</a></li>
+    <li><a href="#" data-secao="produtos" class="menu-link">Produtos</a></li>
+    <li><a href="#" data-secao="contato" class="menu-link">Contato</a></li>
+    <li><a href="#" data-secao="parceiros" class="menu-link"><i class="fa-solid fa-handshake"></i> Parceiros</a></li>
+    <li><a href="#" data-secao="biografia" class="menu-link">Biografia</a></li>
+
+  </ul>
+</nav>
+
+
+                                            <!-- Container principal do site -->
+  <main class="container">
+
+                                                           <!-- Seção inicio -->
+   <section id="inicio" class="secao inicio">
+  <h1>Olá, eu sou o André Donizete</h1>
+
+  <p class="inicio-descricao">
+    Atuo na área fiscal, com foco em MEI, rotinas fiscais,
+    obrigações acessórias e soluções práticas para empresas
+    e profissionais da contabilidade.
+  </p>
+
+  <div class="inicio-destaques">
+    <div class="destaque">
+      <i class="fa-solid fa-user-tie"></i>
+      <h3>MEI</h3>
+      <p>Orientação, regularização e materiais práticos.</p>
+    </div>
+
+    <div class="destaque">
+      <i class="fa-solid fa-file-invoice-dollar"></i>
+      <h3>Fiscal</h3>
+      <p>DIFAL, ICMS, SPED e rotinas fiscais.</p>
+    </div>
+
+    <div class="destaque">
+      <i class="fa-solid fa-box-open"></i>
+      <h3>Produtos</h3>
+      <p>Planilhas e materiais para facilitar o dia a dia.</p>
+    </div>
+  </div>
+</section>
+
+
+                                            <!-- Seção forum -->
+  <section id="forum" class="secao">
+  <h1>Fórum</h1>
+
+  <!-- Formulário de pergunta -->
+  <form id="form-pergunta" class="forum-form">
+    <input type="text" name="nome" placeholder="Seu nome" required>
+    <input type="text" name="titulo" placeholder="Título da pergunta" required>
+    <textarea name="descricao" placeholder="Descreva sua dúvida" required></textarea>
+    <button type="submit">Enviar Pergunta</button>
+  </form>
+
+  <!-- Lista de perguntas -->
+  <div id="forum-lista"></div>
+</section>
+
+                                          
+                                             <!-- Seção Notícias -->
+  <section id="noticias" class="secao">
+  <h1>Notícias</h1>
+
+ <div class="blog-card">
+    <img src="imagens/declaracao mei.jpg" alt="Declaração MEI">
+    <div class="blog-content">
+      <h2>Como fazer Declaração Anual do MEI</h2>
+      <p>Você vai ver de forma simples e didatica como Informar seu Das-simei.</p>
+      <a href="noticia3.html" target="_blank" class="botao">Leia mais</a>
+    </div>
+  </div>
+
+  <div class="blog-card">
+    <img src="imagens/refaz.jpg" alt="Lei do ICMS em Rondônia">
+    <div class="blog-content">
+      <h2>Governo de RO facilita regularização de débitos fiscais com novo Refaz ICMS 2025</h2>
+      <p>Entenda as principais mudanças na legislação tributária estadual.</p>
+      <a href="noticia1.html" target="_blank" class="botao">Leia mais</a>
+    </div>
+  </div>
+
+ <div class="blog-card">
+    <img src="imagens/sped icms.png" alt="Lei do ICMS em Rondônia">
+    <div class="blog-content">
+      <h2>Receita Federal lançar Atualização Manual EFD ICMS</h2>
+      <p>Entenda as principais mudanças na legislação tributária estadual.</p>
+      <a href="noticia2.html" target="_blank" class="botao">Leia mais</a>
+    </div>
+  </div>
+
+ 
+
+
+
+</section>
+
+                                               <!-- Seção Produtos -->
+  <section id="produtos" class="secao">
+  <h1>Produtos</h1>
+
+  <!-- Linha de Produtos Gratuitos -->
+  <h2>Produtos Gratuitos</h2>
+  <div class="produtos-container">
+    <!-- Produto gratuito 1 -->
+    <a href="arquivos/relatorio mensal.doc" download class="produto-card">
+      <img src="imagens/mei.jpg" alt="MEI">
+      <h3>Modelo Relatorio Receita Bruta MEI</h3>
+      <p>Todos os MEI Estão Obrigados a fazer Esse Relatorio.</p>
+      <span class="botao-baixar">Baixar agora</span>
+    </a>
+
+    
+
+  <hr> <!-- Linha divisória -->
+
+                               <!-- Linha de Produtos à Venda -->
+  <h2>Produtos à Venda</h2>
+  <div class="produtos-container">
+                                <!-- Produto pago 1 -->
+    
+      <h3>Planilha Difal Base Dupla</h3>
+         <a href="https://pay.hotmart.com/T85951117Q?bid=1766083563692"target="_blank" class="produto-card">
+      <img src="imagens/difal.png" alt="Planilha Fiscal Avançada">
+         <iframe width="300" height="170" 
+          src="https://www.youtube.com/embed/SEU_VIDEO_ID" 
+          title="Vídeo do produto" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+         </iframe>
+      <p>Faça calculo de Difal de forma rapida e simples.</p>
+      <span class="botao-comprar">Comprar</span>
+    </a>
+
+    <!-- Produto pago 2 -->
+    <a href="https://go.hotmart.com/V98773824O?dp=1" target="_blank" class="produto-card">
+      <img src="imagens/controle mei.png" alt="Planilha de Controle do MEI">
+      <h3>Planilha de Controle limite MEI</h3>
+      <p>Gerencie seu limite anual do MEI e saldo de faturamento.</p>
+      <span class="botao-comprar">Comprar</span>
+    </a>
+  </div>
+</section>
+                                                           <!-- Seção Contato -->
+   <section id="contato" class="secao">
+  <h1>Contato</h1>
+  <div class="contato-container">
+
+    <div class="contato-item">
+      <i class="fa-solid fa-phone"></i>
+      <span>+55 69 99262-1150</span>
+    </div>
+
+    <div class="contato-item">
+      <i class="fa-solid fa-envelope"></i>
+      <span>vieiraandre62@gmail.com</span>
+    </div>
+
+    <div class="contato-item">
+      <i class="fa-brands fa-linkedin"></i>
+      <a href="https://www.linkedin.com/in/andre-donizete-vieira-3bb79b140" target="_blank">LinkedIn</a>
+    </div>
+
+    <div class="contato-item">
+      <i class="fa-brands fa-youtube"></i>
+      <a href="https://www.youtube.com/@eivoce1993">YouTube</a>
+    </div>
+
+  </div>
+  </section>
+                                                                      <!-- Seção parceiros -->
+  <section id="parceiros" class="secao">
+  <h2><i class="fa-solid fa-handshake"></i> Parceiros</h2>
+
+  <div class="cards-parceiros">
+
+    <div class="card-parceiro">
+      <img src="imagens/solaris.jpeg" alt="Escritório Solaris">
+      <h3>Escritório Contábil Solaris</h3>
+      <p>Assessoria contábil e fiscal para micro e pequenas empresas.</p>
+      <a href="parceiros.html" target="_blank" class="botao-parceiro">
+        Acessar site
+      </a>
+    </div>
+
+    <div class="card-parceiro">
+      <img src="imagens/carlos.png" alt="carlos robert">
+      <h3>Carlos Robert Informatica</h3>
+      <p>Solução garantida para seus problemas técnicos!.</p>
+      <a href="parceiros carlos.html" target="_blank" class="botao-parceiro">
+        Acessar site
+      </a>
+    </div>
+
+   <div class="card-parceiro">
+      <img src="imagens/andrevieira.jpeg" alt="André vieira">
+      <h3>André Donizete</h3>
+      <p>Acessoria Setor Fiscal.</p>
+      <a href="parceiros andre.html" target="_blank" class="botao-parceiro">
+        Acessar site
+      </a>
+    </div>
+
+
+
+
+
+  </div>
+</section>
+                                                                             <!-- biografia -->
+   <section id="biografia" class="secao">
+    <h1>Biografia</h1>
+    <p>André Donizete Vieira é formado em Ciências Contábeis pela Universidade Paulista (UNIP), com graduação concluída entre 2016 e 2019. Atualmente, atua como Analista Fiscal na empresa Dydyo Refrigerantes, localizada em Porto Velho, Rondônia, onde também reside. Com sólida experiência na área fiscal e tributária, André é responsável pela elaboração e análise de planilhas especializadas em temas como DIFAL (Diferencial de Alíquota) e Substituição Tributária, além de possuir amplo conhecimento no envio das obrigações acessórias SPED ICMS/IPI e SPED Contribuições. Também oferece suporte e orientação fiscal a Microempreendedores Individuais (MEIs), contribuindo para a regularização e crescimento desses pequenos negócios. Além da atuação técnica, André também é criador de conteúdo digital, compartilhando conhecimento sobre contabilidade, tributos e rotinas fiscais com foco em educação e orientação para profissionais e empreendedores que desejam entender melhor suas obrigações e oportunidades no cenário contábil..</p>
+   </section>
+
+  </main>
+ <script src="js/script.js"></script>
+                                    <!-- Botão WhatsApp flutuante -->
+     <a href="https://wa.me/5569992621150" target="_blank" class="whatsapp-float" title="Fale comigo no WhatsApp">
+         <i class="fa-brands fa-whatsapp"></i>
+     </a>
+     <a href="https://wa.me/5569992621150" 
+          class="whatsapp-float" 
+          target="_blank" 
+          title="Fale comigo no WhatsApp">
+         <i class="fa-brands fa-whatsapp"></i>
+      </a>
+</body>
+</html>
