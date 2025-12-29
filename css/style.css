@@ -760,3 +760,80 @@ hr {
 .botao:hover {
   background-color: #5a3ea1;
 }
+.card-parceiro {
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.card-parceiro img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+.card-parceiro img {
+  box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+
+}
+.card-parceiro img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 8px;
+}
+
+.inicio {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.inicio h1 {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.inicio-descricao {
+  max-width: 750px;
+  margin: 0 auto 35px;
+  font-size: 17px;
+  color: #cfcfcf;
+  line-height: 1.6;
+}
+
+.inicio-destaques {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.destaque {
+  background: #18181f;
+  padding: 25px 20px;
+  border-radius: 16px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+}
+
+.destaque i {
+  font-size: 28px;
+  color: #7c3aed;
+  margin-bottom: 10px;
+}
+
+.destaque h3 {
+  margin-bottom: 8px;
+}
+
+.destaque p {
+  font-size: 14px;
+  color: #cfcfcf;
+}
+.destaque h3 {
+  color: #ffffff;
+}
+
+.destaque p {
+  color: #cfcfcf;
+}

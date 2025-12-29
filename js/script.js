@@ -1,3 +1,4 @@
+
 // Seleciona apenas links que controlam seções
 const linksMenu = document.querySelectorAll('.menu a[data-secao]');
 const secoes = document.querySelectorAll('.secao');
@@ -68,4 +69,21 @@ formPergunta.addEventListener('submit', function(e) {
       alert('Preencha nome e resposta!');
     }
   });
+});
+document.addEventListener("DOMContentLoaded", function () {
+  // Remove ativa de todas as seções
+  secoes.forEach(secao => secao.classList.remove('ativa'));
+
+  // Ativa a seção Início
+  const inicio = document.getElementById('inicio');
+  if (inicio) {
+    inicio.classList.add('ativa');
+  }
+
+  // Marca o menu Início como ativo
+  linksMenu.forEach(l => l.classList.remove('ativo'));
+  const linkInicio = document.querySelector('.menu a[data-secao="inicio"]');
+  if (linkInicio) {
+    linkInicio.classList.add('ativo');
+  }
 });
